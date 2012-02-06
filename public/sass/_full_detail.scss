@@ -1,0 +1,68 @@
+section.event_item.full {
+	margin: 15px 3px;
+	border-bottom: solid 1px $c_gray2;
+	> header {
+		
+		$time_height: 20px;
+		$title_height: 36px;
+		$actions_height: 32px;
+		$time_title_height: $time_height + $title_height;
+		$header_height: $time_title_height + $actions_height;
+		
+		height: $header_height; 
+		position: relative;
+		> section, > h2 {
+			position: absolute;
+		}
+		.time_panel {
+			height: $time_height;
+			width: 100%;			
+		}
+		.time_panel {		
+			left: 0;
+			top: 0;	
+			color: $c_prm-1;
+			font-weight: bold;
+			
+			
+		}
+		.action_panel {
+			top: $time_title_height;
+			height: $actions_height;
+			.actions {
+				top: 0;
+				right: 0;
+				width: 50px;
+			}
+			.photos {
+				img {
+					width: 32px;
+					height: 32px;
+				}
+				float: right;
+				width: 64px;
+				height: 32px;
+				font-size: 0.5em;
+			}
+			
+			
+		}
+		
+		.title_panel {
+			top: $time_height;
+			height: $title_height;
+			width: 100%;
+			@include ellipsis();
+			@include font_cursive;
+			color: $c_gray5;			
+		}
+		
+	}
+	> details {
+		margin: 12px;
+		color: $c_gray5;
+		
+		
+		
+	}
+}
