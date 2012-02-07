@@ -1,5 +1,5 @@
 define [ 
-		'text!templates/events/full_detail.tmpl'
+		'text!templates/events/partial_detail.tmpl'
 	], 
 	(events_full_detail_text) ->
 		window.EventList = Backbone.Collection.extend

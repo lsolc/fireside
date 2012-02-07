@@ -1,0 +1,28 @@
+{{#each events}}
+<section class="event_item partial">
+	<header>
+		<section class="top_panel">
+			<section class="time_panel">
+				<span class="time">{{time_range}}</span>
+				<span class="duration">({{duration}})</span>				
+			</section>			
+			<section class="title">		
+				{{title}}
+			</section>			
+		</section>
+		
+		<section class="action_panel">
+			<section class='photos'>				
+				<img src="/images/member.png" alt="person photo" />
+			</section>	
+			
+			<details class="details_panel">
+				<div class='description'>{{description}}</div>	
+			</details>	
+			<section class="actions"><img src="/images/icons/delete.png" alt="delete" /></section>				
+		</section>		
+	</header>
+	
+</section>	
+{{/each}}
+

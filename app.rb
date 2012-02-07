@@ -9,11 +9,11 @@ get '/events' do
 
   2.times do |i|
     items << {
+      :id => i,
       :time_range => "16:00 - 18:00",
       :duration => "2h",
-      :title => "Vyzvednout Hynka ze skolkyVyzvednout Hynka ze skolkyVyzvednout Hynka ze skolky",      
-      :description => "Na zpatecni ceste dojit na postu a nakoupit",
-      
+      :title => "Vyzvednout Hynka ze skolky, Vyzvednout Hynka ze skolky, Vyzvednout Hynka ze skolky",      
+      :description => "Na zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit",
       :short_message => "Failure #{i}",
       :full_message => "app/helpers/text_helper.rb:35:in",
       :timestamp => 1291899928,

@@ -78,7 +78,7 @@ h2 {
   font-weight: bold;
 }
 
-/* line 1, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+/* line 6, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
 #events .current {
   width: 40%;
   position: relative;
@@ -86,60 +86,30 @@ h2 {
   left: 20px;
 }
 
-/* line 1, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full {
+/* line 13, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item {
+  width: 550px;
   margin: 15px 3px;
   border-bottom: solid 1px #cccccc;
 }
-/* line 4, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > header {
-  height: 88px;
+/* line 17, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item > header {
+  width: 550px;
   position: relative;
 }
-/* line 14, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > header > section, section.event_item.full > header > h2 {
+/* line 20, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item > header > section {
   position: absolute;
+  width: 550px;
 }
-/* line 17, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > header .time_panel {
-  height: 20px;
-  width: 100%;
-}
-/* line 21, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > header .time_panel {
-  left: 0;
-  top: 0;
+/* line 24, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item > header .time_panel {
   color: #ff5600;
   font-weight: bold;
+  font-size: 10pt;
 }
-/* line 29, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > header .action_panel {
-  top: 56px;
-  height: 32px;
-}
-/* line 32, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > header .action_panel .actions {
-  top: 0;
-  right: 0;
-  width: 50px;
-}
-/* line 37, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > header .action_panel .photos {
-  float: right;
-  width: 64px;
-  height: 32px;
-  font-size: 0.5em;
-}
-/* line 38, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > header .action_panel .photos img {
-  width: 32px;
-  height: 32px;
-}
-/* line 51, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > header .title_panel {
-  top: 20px;
-  height: 36px;
-  width: 100%;
+/* line 29, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item > header .title {
   white-space: nowrap;
   overflow: hidden;
   -o-text-overflow: ellipsis;
@@ -148,8 +118,100 @@ section.event_item.full > header .title_panel {
   font-family: cursive;
   color: #555555;
 }
-/* line 61, /Users/ladislavsolc/Projects/fireside/public/sass/_full_detail.scss */
-section.event_item.full > details {
+/* line 36, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item > header .action_panel .actions {
+  float: right;
+  width: 50px;
+}
+/* line 39, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item > header .action_panel .actions img {
+  width: 16px;
+  height: 16px;
+}
+/* line 44, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item > header .action_panel .photos {
+  float: left;
+  width: 64px;
+  height: 32px;
+  font-size: 0.5em;
+}
+/* line 45, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item > header .action_panel .photos img {
+  width: 32px;
+  height: 32px;
+}
+/* line 58, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item > .details_panel {
   margin: 12px;
   color: #555555;
+}
+
+/* line 67, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.partial > header {
+  height: 72px;
+}
+/* line 77, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.partial > header .top_panel {
+  height: 40px;
+}
+/* line 79, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.partial > header .top_panel .time_panel, section.event_item.partial > header .top_panel .title {
+  display: block;
+  position: absolute;
+  height: 40px;
+  line-height: 40px;
+}
+/* line 86, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.partial > header .top_panel .time_panel {
+  width: 110px;
+}
+/* line 89, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.partial > header .top_panel .title {
+  width: 440px;
+  right: 0;
+  font-size: 12pt;
+}
+/* line 96, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.partial > header .action_panel {
+  top: 40px;
+  height: 32px;
+}
+/* line 99, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.partial > header .action_panel > .details_panel {
+  width: 404px;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  font-size: 9pt;
+  color: #999999;
+}
+
+/* line 111, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.full > header {
+  height: 88px;
+}
+/* line 120, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.full > header .top_panel {
+  height: 20px;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+/* line 127, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.full > header .title {
+  top: 20px;
+  height: 36px;
+  width: 100%;
+  font-size: 15pt;
+}
+/* line 134, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.full > header .action_panel {
+  top: 56px;
+  height: 32px;
+}
+/* line 140, /Users/ladislavsolc/Projects/fireside/public/sass/_events.scss */
+section.event_item.full > .details_panel {
+  width: 550px;
 }

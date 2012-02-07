@@ -1,22 +1,24 @@
 {{#each events}}
-<section class="event_item full">
+<section class="event_item full" data-display-state="full" data-id="{{id}}">
 	<header>
-		<section class="time_panel">
-			<span class="time">{{time_range}}</span>
-			<span class="duration">({{duration}})</span>
+		<section class="top_panel">
+			<span class="time_panel">
+				<span class="time">{{time_range}}</span>
+				<span class="duration">({{duration}})</span>				
+			</span>			
 		</section>
-		<h2 class="title_panel">		
+		<section class="title">		
 			{{title}}
-		</h2>
+		</section>
 		<section class="action_panel">
 			<div class='photos'>				
 				<img src="/images/member.png" alt="person photo" />
 			</div>		
-			<section class="actions"></section>		
+			<section class="actions"><img src="/images/icons/delete.png" alt="delete" /></section>			
 		</section>
 		
 	</header>
-	<details>	
+	<details class="details_panel">	
 		<div class='description'>{{description}}</div>	
 	</details>	
 </section>	
