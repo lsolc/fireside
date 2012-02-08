@@ -6,6 +6,6 @@ require({
 	
 ], function() {
 	require(['domReady!'], function(doc) {
-		require(['cs!plugins/events'], function() {});
+		require(['plugins/events'], function() {});
 	});			
 });
