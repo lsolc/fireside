@@ -9,7 +9,7 @@ define [
 		window.EventItemList = Backbone.Collection.extend
 			url: 'events',
 			model: EventItem
-		
+
 		window.EventItemListView = Backbone.View.extend
 			el: '#events .current #list',
 			initialize: () -> 
@@ -17,29 +17,29 @@ define [
 				Handlebars.registerPartial('full_detail', events_full_detail_text)
 				this.template = Handlebars.compile(events_list_text)	
 			render: () ->
-				much_items = list.length > 2
-				htmlString = this.template(events : list.toJSON(), much_items: much_items)
-				$(this.el).html(htmlString)		
-		
-		window.EventItemView = Backbone.View.extend
-			initialize: () ->
-				this.partial_template = Handlebars.compile(events_partial_detail_text)		
-				this.full_template = Handlebars.compile(events_full_detail_text)
-			render: (state, data) -> 
-				htmlString = this[state + '_template'](data)
-				$(this.el).replaceWith(htmlString)
+				many_items = list.length > 2
+				html_string = this.template(events: list.toJSON(), many_items: many_items)
+				$(this.el).html(html_string)
 				
+		window.EventItemView = Backbone.View.extend 
+			initialize: () ->	
+				this.partial_template = Handlebars.compile(events_partial_detail_text)
+				this.full_template = Handlebars.compile(events_full_detail_text)		
+				
+			render: (model, state) ->
+				html_string = this[state + '_template'](model.attributes)
+				$(this.el).replaceWith(html_string) 							
 						
+					
+		$(document).on 'click', '.event_item > header', () ->			
+			item_el = $(this).closest('.event_item')
+			data = item_el.data()
+			model = list.get(data.id)
+			view = new EventItemView(el: item_el)		
+			view.render(model, data.nextState)	
+			
 		
 				
-		$('.event_item > header').live 'click', () -> 
-			item_el = $(this).closest('.event_item') 
-			data = item_el.data()
-			item = list.get(data.id)
-			view = new EventItemView( el: item_el) 
-			view.render(data.nextState, item.attributes)			
-			 
-		
 		list = new EventItemList
 		list_view = new EventItemListView()
 		list.fetch({ success: () -> 

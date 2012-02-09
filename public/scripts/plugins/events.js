@@ -15,13 +15,13 @@
         return this.template = Handlebars.compile(events_list_text);
       },
       render: function() {
-        var htmlString, much_items;
-        much_items = list.length > 2;
-        htmlString = this.template({
+        var html_string, many_items;
+        many_items = list.length > 2;
+        html_string = this.template({
           events: list.toJSON(),
-          much_items: much_items
+          many_items: many_items
         });
-        return $(this.el).html(htmlString);
+        return $(this.el).html(html_string);
       }
     });
     window.EventItemView = Backbone.View.extend({
@@ -29,21 +29,21 @@
         this.partial_template = Handlebars.compile(events_partial_detail_text);
         return this.full_template = Handlebars.compile(events_full_detail_text);
       },
-      render: function(state, data) {
-        var htmlString;
-        htmlString = this[state + '_template'](data);
-        return $(this.el).replaceWith(htmlString);
+      render: function(model, state) {
+        var html_string;
+        html_string = this[state + '_template'](model.attributes);
+        return $(this.el).replaceWith(html_string);
       }
     });
-    $('.event_item > header').live('click', function() {
-      var data, item, item_el, view;
+    $(document).on('click', '.event_item > header', function() {
+      var data, item_el, model, view;
       item_el = $(this).closest('.event_item');
       data = item_el.data();
-      item = list.get(data.id);
+      model = list.get(data.id);
       view = new EventItemView({
         el: item_el
       });
-      return view.render(data.nextState, item.attributes);
+      return view.render(model, data.nextState);
     });
     list = new EventItemList;
     list_view = new EventItemListView();
