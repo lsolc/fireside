@@ -22,23 +22,21 @@ define [
 				$(this.el).html(html_string)
 				
 		window.EventItemView = Backbone.View.extend 
-			initialize: () ->	
+			events: {'click .event_item > header' : 'toggle_template'}
+			initialize: () ->				
 				this.partial_template = Handlebars.compile(events_partial_detail_text)
-				this.full_template = Handlebars.compile(events_full_detail_text)		
-				
+				this.full_template = Handlebars.compile(events_full_detail_text)			
 			render: (model, state) ->
 				html_string = this[state + '_template'](model.attributes)
-				$(this.el).replaceWith(html_string) 							
-						
-					
-		$(document).on 'click', '.event_item > header', () ->			
-			item_el = $(this).closest('.event_item')
-			data = item_el.data()
-			model = list.get(data.id)
-			view = new EventItemView(el: item_el)		
-			view.render(model, data.nextState)	
+				$(this.el).replaceWith(html_string) 	
+			toggle_template:  (e) ->		
+				item_el = $(e.currentTarget).closest('.event_item')
+				data = item_el.data()
+				model = list.get(data.id)
+				this.el = item_el
+				this.render(model, data.nextState)	
 			
-		
+		item_view = new EventItemView({el: '#list'})	
 				
 		list = new EventItemList
 		list_view = new EventItemListView()
