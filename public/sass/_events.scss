@@ -61,8 +61,6 @@ section.event_item {
 	}		
 }
 
-//////////////////////////////////////////   //////////////////////////////////////
-
 section.event_item.partial {
 	> header {		
 		$time_panel_width: 110px;
@@ -105,7 +103,6 @@ section.event_item.partial {
 		}		
 	}	
 }
-/////////////////////////////
 
 section.event_item.full {	
 	> header {		

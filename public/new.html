@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New</title>		
+	<script src="scripts/require.js" data-main="scripts/pages/new_page" type="text/javascript" charset="utf-8"></script>
+	
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+</head>
+
+	
+<body id="new">
+	<section class="container">	
+		<form id="new_event" action="new_submit" method="get" accept-charset="utf-8">
+			<h3>New Event</h3>			
+			<input type="text"  size="58" name="" value="" id="title" placeholder="Title:">
+			<textarea name="Name" rows="8" cols="40" id="description" placeholder="Description:"></textarea>
+			
+			<fieldset id="from" class="">
+				<legend>Start</legend>
+				<input value="2012-2-31" type="date">
+				<input value="08:45" type="time">
+						
+			</fieldset>
+			
+			<fieldset id="till" class="">
+				<legend>End</legend>
+				<input value="" placeholder="" type="date">
+				<input value="" placeholder="" type="time">			
+			</fieldset>
+			
+			<select>
+				<option value="member1">Member1</option>
+				<option value="member2">Member2</option>	  
+			</select>
+			
+			<section class="controls">
+				<input type="submit" value="Create" class="create_button">			
+				<input type="button" value="Cancel" class="save_button">
+			</section>		
+		</form>
+	</section>	
+</body>
+		
+		
+	
+
+
+
+
+
+
+
+

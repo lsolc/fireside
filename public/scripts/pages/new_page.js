@@ -1,11 +1,8 @@
 require({
 	baseUrl: '/scripts'
 },
-[
-
-	
-], function() {
+[], function() {
 	require(['domReady!'], function(doc) {
-		require(['events'], function() {});
+		require([], function() {});
 	});			
 });
