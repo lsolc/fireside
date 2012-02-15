@@ -3,9 +3,9 @@ body#new {
 		width: 550px;
 		border: 1px solid;
 		form#new_event {
-			
+			border: 1px solid $c_gray2;	
 			font-size: 16px;
-			color: $c_gray5;
+			color: $c_prm-1;
 			h3 {
 				background-color: $c_gray1;
 				height: 20px;
@@ -13,8 +13,8 @@ body#new {
 				color: $c_prm-1;
 			}
 			
-			#title, #description, fieldset, select, .controls, fieldset > input {	
-				border-radius: 0.4em;			
+			#title, #description, fieldset, select, .controls, fieldset > input, .wrapper {	
+				//border-radius: 0.4em;			
 				margin-top: 20px;
 				margin-left: 60px;
 			}
@@ -25,8 +25,10 @@ body#new {
 			
 			#description {	
 				height: 100px;
-				width: 400px;
-				height: 60gpx;
+				width: 410px;
+				height: 60px;
+				border: 1px solid $c_gray2;	
+				
 			}
 			
 			fieldset  {		
@@ -39,9 +41,20 @@ body#new {
 					height: 20px;
 				}					
 			}
+			.wrapper {				
+			}
 			
-			.controls {
+			.chzn-container, .chzn-container-single {				
+			}
+			
+			.controls {				
+				width: 150px;	
 				margin-bottom: 20px;			
+				.create_button, .save_button {
+					margin-right: 10px;
+					width: 60px;
+					height: 30px;
+				}		
 			}					
 		}			
 	}

@@ -1,8 +1,7 @@
 require({
 	baseUrl: '/scripts'
-},
-[], function() {
+},['chosen.jquery.min'], function() {
 	require(['domReady!'], function(doc) {
-		require([], function() {});
+		require(['new_event'], function() {});
 	});			
 });
