@@ -1,31 +1,65 @@
 <section class="container">	
 	<form id="new_event" action="new_submit" method="get" accept-charset="utf-8">
-		<h3>New Event</h3>			
+		<h3>New Event</h3>
+		<section class="time">			
+			<section class="from">
+				<span>From:</span>
+				<select id="hours"></select>
+				<span>:</span>
+				<select id="minutes"></select>
+				
+				<span id="date">22/4 2012</span>			
+			</section>
+			
+			<section class="duration">
+				<span>Duration:</span>
+				<div class="layout-slider">
+					<input id="SliderSingle" type="slider" name="price" value="20" />
+				</div>			    
+			</section>
+			
+			<section class="to">
+				<span>To:</span>
+				<span id="time">18:30</span>
+				<span id="date">22/4 2012</span>									
+			</section>		    		
+		</section>	
+		
 		<input type="text"  size="58" name="" value="" id="title" placeholder="Title:">
-		<textarea name="Name" rows="8" cols="40" id="description" placeholder="Description:"></textarea>
+				<textarea name="Name" rows="8" cols="40" id="description" placeholder="Description:"></textarea>
+		    
+		
+		<!--
+		<input type="text"  size="58" name="" value="" id="title" placeholder="Title:">
+				<textarea name="Name" rows="8" cols="40" id="description" placeholder="Description:"></textarea>	-->
 			
-		<fieldset id="from" class="">
-			<legend>Start</legend>
-			<input value="2012-2-31" type="date">
-			<input value="08:45" type="time">						
-		</fieldset>
-			
-		<fieldset id="till" class="">
-			<legend>End</legend>
-			<input value="" placeholder="" type="date">
-			<input value="" placeholder="" type="time">			
-		</fieldset>
-			
-		<div class="wrapper">
+		
+		<section class="members">
 			<select id="options" data-placeholder="Choose a member..." multiple="multiple" style="width: 412px;">
-				<option value="id">{{display_name}}</option>
-												
+				{{#each members}}
+				<option id="" value="">{{this.display_name}}</option>	
+				{{/each}}											
 			</select>
-		</div>		
+		</section>		
 			
 		<section class="controls">
 			<input type="submit" value="Create" class="create_button">			
 			<input type="button" value="Cancel" class="save_button">
-		</section>		
+		</section>				
 	</form>
 </section>	
+
+<!--
+<fieldset id="from" class="">
+<legend>From</legend>
+<input id="current_day" value={{current_day}} type="date">
+<input id="current_time" value="" type="time">						
+</fieldset>
+					
+<fieldset id="till" class="">
+<legend>To</legend>
+<input value="" placeholder="" type="date">
+<input value="" placeholder="" type="time">			
+</fieldset>-->
+		
+

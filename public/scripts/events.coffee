@@ -7,6 +7,9 @@ define [
 		list = new List
 		show_view = new ShowView({el: '#list', list: list})			
 		list_view = new ListView({ list: list })
+		
+		
+		
 		list.fetch({ success: () -> 
 			list_view.render()
 		})

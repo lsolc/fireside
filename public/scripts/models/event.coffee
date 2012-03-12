@@ -1,2 +1,2 @@
 define [], () -> 
-	Backbone.Model.extend {  }		
+	Backbone.Model.extend { from: new Date() }		

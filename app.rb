@@ -7,22 +7,12 @@ def items
   2.times do |i|
     result << {
       :id => i,
-      :time_range => "16:00 - 18:00",
-      :duration => "2h",
+      :from_date => Date.now,
+      :from_hours => 9,
+      :from_minutes => 45,
+      :till => Time.now,
       :title => "Vyzvednout Hynka ze skolky, Vyzvednout Hynka ze skolky, Vyzvednout Hynka ze skolky",      
       :description => "Na zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit",
-      :short_message => "Failure #{i}",
-      :full_message => "app/helpers/text_helper.rb:35:in",
-      :timestamp => 1291899928,
-      :level => "#{i}",
-      :file => "/var/www/somefile.rb",
-      :line => "356",
-      :_user_id => "jkaramon",
-      :custom_data => {
-        :application => "VanillaDesk",
-        :app_version => "1.0.2345",
-        :component => "job_server"
-      }
     }
   end
   result

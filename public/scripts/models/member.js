@@ -2,7 +2,7 @@
 
   define([], function() {
     return Backbone.Model.extend({
-      from: new Date()
+      initialize: function() {}
     });
   });
 
