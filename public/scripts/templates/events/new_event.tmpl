@@ -1,6 +1,13 @@
 <section class="container">	
 	<form id="new_event" action="new_submit" method="get" accept-charset="utf-8">
 		<h3>New Event</h3>
+	
+		<section class="temp_time_controls">
+				<label for="">From:</label><input type="text" size="40" name="" value="13.3.2012 14:30" id="time_from"><br />			
+				<label for="">Duration:</label><input type="text" size="40" name="" value="4" id="time_duration"><br />		
+				<label for="">To:</label><input type="text" name="" size="40" value="13.3.2012 18:30" id="time_to">			
+		</section>	
+		
 		<section class="time">			
 			<section class="from">
 				<span>From:</span>
@@ -26,24 +33,20 @@
 		</section>	
 		
 		<input type="text"  size="58" name="" value="" id="title" placeholder="Title:">
-				<textarea name="Name" rows="8" cols="40" id="description" placeholder="Description:"></textarea>
-		    
-		
-		<!--
-		<input type="text"  size="58" name="" value="" id="title" placeholder="Title:">
-				<textarea name="Name" rows="8" cols="40" id="description" placeholder="Description:"></textarea>	-->
-			
+		<textarea name="Name" rows="8" cols="40" id="description" placeholder="Description:"></textarea>		
 		
 		<section class="members">
-			<select id="options" data-placeholder="Choose a member..." multiple="multiple" style="width: 412px;">
+			<select id="members" data-placeholder="Choose a member..." multiple="multiple" style="width: 412px;">
 				{{#each members}}
-				<option id="" value="">{{this.display_name}}</option>	
+				<option id="" value="{{this.id}}">{{this.display_name}}</option>	
 				{{/each}}											
 			</select>
-		</section>		
-			
+		</section>	
+		
+		
+		<ul id="errors"></ul>
 		<section class="controls">
-			<input type="submit" value="Create" class="create_button">			
+			<input type="button" value="Create" class="create_button">			
 			<input type="button" value="Cancel" class="save_button">
 		</section>				
 	</form>
@@ -61,5 +64,3 @@
 <input value="" placeholder="" type="date">
 <input value="" placeholder="" type="time">			
 </fieldset>-->
-		
-

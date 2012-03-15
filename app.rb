@@ -7,7 +7,7 @@ def items
   2.times do |i|
     result << {
       :id => i,
-      :from_date => Date.now,
+      :from_date => Date.new,
       :from_hours => 9,
       :from_minutes => 45,
       :till => Time.now,
