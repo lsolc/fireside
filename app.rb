@@ -1,17 +1,19 @@
 require 'rubygems' 
 require 'sinatra'
 require 'json'
+require 'date'
 
 def items
   result = []
   2.times do |i|
     result << {
       :id => i,
-      :from_date => Date.new,
+      :from_date => Date.today,
       :from_hours => 9,
       :from_minutes => 45,
-      :till => Time.now,
-      :title => "Vyzvednout Hynka ze skolky, Vyzvednout Hynka ze skolky, Vyzvednout Hynka ze skolky",      
+      :members => [1, 2],
+      :duration_minutes => 60,
+      :title => "Vyzvednout Hynka ze skolky #{i}",      
       :description => "Na zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit",
     }
   end

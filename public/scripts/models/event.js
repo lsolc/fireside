@@ -1,6 +1,6 @@
 define([], function() {
 	return Backbone.Model.extend({
-		defaults: {},
+		defaults: { title: 'New event', description: 'Some description text...'},
 		errors: [],
 		from: new Date(),
 		initialize: function() {
@@ -36,7 +36,7 @@ define([], function() {
 			}
 		},
 		title_validate: function(attr) {
-			if (attr.title === "") {
+			if (attr.title === '') {
 				this.add_error('Title is requiered field!');	
 			}		
 		}, 
@@ -49,7 +49,13 @@ define([], function() {
 			if (attr.memember === null) {
 				this.add_error('No member selected!');
 			}		
-		}		
+		},
+		calculate_time: function() {				
+			/*
+			var min = this.attributes.from_minutes + this.attributes.duration_minutes;
+			var till = Date.parse(this.attributes.from_date).addHours(this.attributes.from_hours).addMinutes(min);
+			this.set({till: till});*/
+		}	
 	});
 });
 

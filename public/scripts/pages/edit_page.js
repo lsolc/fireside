@@ -7,8 +7,7 @@ require({
 	], 
 	function() {
 		require(['lib/domReady!'], function(doc) {
-			require(['new_event'], function() {
-				
+			require(['edit_event'], function() {				
 			});
 		});
 	}
