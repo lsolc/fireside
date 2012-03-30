@@ -3,14 +3,14 @@ define([
 	], 
 	function(new_event_text, Members) {
 		return Backbone.View.extend({
-			//el: '#new .current',
 			events: {
 				'click .create_button': 'create_event',
-				'click #hours, #minutes' : 'do_something',				
+				'click .jslider-pointer, #hours, #minutes' : 'show_end_date',				
 			},				
 			initialize: function() {
 				_.bindAll(this);
-				this.model.bind('change', this.render);				
+				this.model.bind('change', this.render);	
+				
 				Handlebars.registerHelper('show_hours', function(selected) {
 					var i, sel, res = "";
 					for (i=0; i<24; i++) {
@@ -59,17 +59,16 @@ define([
 			},			
 			create_event: function() {	
 				var attr = {
-					time_from: $('#time_from').val(),
-					duration: $('#time_duration').val(),
-					time_to: $('#time_to').val(),
+					duration_minutes: $('#SliderSingle').slider('value'),
 					title: $('#title').val(),
 					description: $('#description').val(),
-					member: $('#members').val()
+					members: $('#members').val()
 				}	
 				this.model.set(attr);					
 				if (this.model.errors.length === 0) {
 					//this.model.save();
 					alert("OK");	
+					
 				}
 				else {
 					var errors_template = Handlebars.compile('{{#each errors}}<li>{{this}}</li>{{/each}}');
@@ -81,19 +80,23 @@ define([
 					from: 0,
 					to: 24,
 					limits: false,
-					scale: [0, '|', 4, '|', '8', '|', 16, '|', 24],
-					heterogeneity: ['50/8', '75/16'],
+					scale: [0, '|', '1', '|','2', '|','3', '|','4', '|','6','|', 8,'|', '16', '|',24],
+					heterogeneity: ['50/4', '75/8'],
 					step: 0.5,
 					round: 1,
 					format: {format: '##.0', locale: 'de'},
 					dimension: '&nbsp;hours',
 					skin: "round",
-					callback: function() {}
+					callback: function(value) {console.log(value);}
 				});
 			},
-			do_something: function() {	
-				//this.model.calculate_time();				
-				console.log("do_something");
+			show_end_date: function() {
+				var dur_min = 60 * $('#SliderSingle').slider('value');
+				var from_h = $('#hours').val();
+				var from_m = $('#minutes').val();
+				this.model.set({duration_minutes: dur_min, from_hours: from_h, from_minutes: from_m}, {silent: true});				
+				this.model.calculate_dates();		
+				$('span#date_till').html(this.model.till.toString('ddd dd.MM.yyyy - HH:mm'));
 			}
 		});
 	}

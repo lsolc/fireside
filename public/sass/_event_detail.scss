@@ -2,7 +2,7 @@ body#new, body#edit {
 	.container {
 		width: 550px;
 		border: 1px solid;
-		form#new_event {
+		form {
 			border: 1px solid $c_gray2;	
 			font-size: 16px;
 			color: $c_prm-1;
@@ -12,29 +12,27 @@ body#new, body#edit {
 				padding: 5px 0px 5px 10px;
 				color: $c_prm-1;
 			}			
-			#title, #description, fieldset, .controls, .members {						
+			#title, #description, .controls, .members {						
 				margin-top: 16px;
 				margin-left: 70px;
 			}	
-			span#date, span#time {
-				border: 1px solid blue;
+			#date {
+				margin-left: 10px;
 			}	
-					
-			section.time {				
+			.time {				
 				height: 120px;	
-				section.from, section.to{		
+				.from, .till{		
 					margin-left: 10px;
 					
-					select#hours {
+					#hours {
 						margin-left: 40px;
 					}
 					#hours, #minutes {				
 						font-size: 16px;
 						margin-top: 16px;	
 					}
-					
 				}				
-				section.duration {
+				.duration {
 					margin-left: 10px;
 					margin-top: 30px;
 					.layout-slider{
@@ -43,25 +41,33 @@ body#new, body#edit {
 						position: relative;
 					}
 				}
-				section.to {
-					#time, #date {
-						margin-left: 60px;
+				.till {
+					margin-top: 10px;
+					#date_till {
+						margin-left: 35px;
 					}
 				}
 			}	
-			#title {
-				height: 20px;
+			#title, #description {
+				border: 1px solid $c_gray2;
+				width: 410px;	
 			}
-			
-			#description {					
-				width: 410px;
+			#title {				
+				height: 20px;			
+			}
+			#description {						
 				height: 60px;
-				border: 1px solid $c_gray2;					
+			}
+			#members {
+				width: 412px;
+			}
+			#errors {
+				margin-left: 70px;
 			}
 			.controls {				
 				width: 150px;	
 				margin-bottom: 20px;			
-				.create_button, .save_button {
+				.create_button, .cancel_button {
 					margin-right: 10px;
 					width: 60px;
 					height: 30px;

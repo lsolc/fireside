@@ -1,14 +1,22 @@
 define([], function() {
 	return Backbone.Model.extend({
-		defaults: { title: 'New event', description: 'Some description text...'},
+		defaults: {
+			title: 'New event', 
+			description: 'Some description text...', 
+			from_date: Date.now().toString('yyyy-MM-dd'), 
+			from_hours: Date.now().getHours(), 
+			from_minutes: 0,
+		},
 		errors: [],
-		from: new Date(),
+		from: null,
+		till: null,
 		initialize: function() {
 			this.bind('change', function() {
 				console.log('change event: values for this model have changed');
 			});				
 			this.bind('error', function(model, error) {				
-			});		
+			});	
+			this.calculate_dates();
 		},
 		add_error: function(error) {
 			this.errors.push(error);
@@ -16,7 +24,6 @@ define([], function() {
 		},		
 		validate: function(attr) {
 			this.errors = [];
-			this.time_from_validate(attr);
 			this.duration_validate(attr);
 			this.title_validate(attr);
 			this.description_validate(attr);
@@ -25,13 +32,8 @@ define([], function() {
 				return this.errors;
 			}				
 		},
-		time_from_validate: function(attr) {
-			if (attr.time_from === '') {
-				this.add_error('Time from has not been set!');
-			}
-		},
 		duration_validate: function(attr) {
-			if (attr.duration === '') {
+			if (attr.duration_minutes === '0') {
 				this.add_error('Duration has not been set!');
 			}
 		},
@@ -46,15 +48,18 @@ define([], function() {
 			}
 		},
 		members_validate: function(attr) {
-			if (attr.memember === null) {
+			if (attr.members === null) {
 				this.add_error('No member selected!');
 			}		
 		},
-		calculate_time: function() {				
-			/*
-			var min = this.attributes.from_minutes + this.attributes.duration_minutes;
-			var till = Date.parse(this.attributes.from_date).addHours(this.attributes.from_hours).addMinutes(min);
-			this.set({till: till});*/
+		update_from_date: function() {
+			this.from = Date.parse(this.attributes.from_date).addHours(this.attributes.from_hours).addMinutes(this.attributes.from_minutes);
+		},
+		calculate_dates: function() {
+			this.update_from_date();
+			console.log('from: ' + this.from);			
+			this.till = this.from.addMinutes(this.attributes.duration_minutes);
+			console.log('till: ' + this.till);
 		}	
 	});
 });

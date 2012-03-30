@@ -947,76 +947,91 @@ body#new .container, body#edit .container {
   border: 1px solid;
 }
 /* line 5, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event, body#edit .container form#new_event {
+body#new .container form, body#edit .container form {
   border: 1px solid #cccccc;
   font-size: 16px;
   color: #ff5600;
 }
 /* line 9, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event h3, body#edit .container form#new_event h3 {
+body#new .container form h3, body#edit .container form h3 {
   background-color: #eeeeee;
   height: 15px;
   padding: 5px 0px 5px 10px;
   color: #ff5600;
 }
 /* line 15, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event #title, body#new .container form#new_event #description, body#new .container form#new_event fieldset, body#new .container form#new_event .controls, body#new .container form#new_event .members, body#edit .container form#new_event #title, body#edit .container form#new_event #description, body#edit .container form#new_event fieldset, body#edit .container form#new_event .controls, body#edit .container form#new_event .members {
+body#new .container form #title, body#new .container form #description, body#new .container form .controls, body#new .container form .members, body#edit .container form #title, body#edit .container form #description, body#edit .container form .controls, body#edit .container form .members {
   margin-top: 16px;
   margin-left: 70px;
 }
 /* line 19, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event span#date, body#new .container form#new_event span#time, body#edit .container form#new_event span#date, body#edit .container form#new_event span#time {
-  border: 1px solid blue;
-}
-/* line 23, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event section.time, body#edit .container form#new_event section.time {
-  height: 120px;
-}
-/* line 25, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event section.time section.from, body#new .container form#new_event section.time section.to, body#edit .container form#new_event section.time section.from, body#edit .container form#new_event section.time section.to {
+body#new .container form #date, body#edit .container form #date {
   margin-left: 10px;
 }
-/* line 28, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event section.time section.from select#hours, body#new .container form#new_event section.time section.to select#hours, body#edit .container form#new_event section.time section.from select#hours, body#edit .container form#new_event section.time section.to select#hours {
+/* line 22, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .time, body#edit .container form .time {
+  height: 120px;
+}
+/* line 24, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .time .from, body#new .container form .time .till, body#edit .container form .time .from, body#edit .container form .time .till {
+  margin-left: 10px;
+}
+/* line 27, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .time .from #hours, body#new .container form .time .till #hours, body#edit .container form .time .from #hours, body#edit .container form .time .till #hours {
   margin-left: 40px;
 }
-/* line 31, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event section.time section.from #hours, body#new .container form#new_event section.time section.from #minutes, body#new .container form#new_event section.time section.to #hours, body#new .container form#new_event section.time section.to #minutes, body#edit .container form#new_event section.time section.from #hours, body#edit .container form#new_event section.time section.from #minutes, body#edit .container form#new_event section.time section.to #hours, body#edit .container form#new_event section.time section.to #minutes {
+/* line 30, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .time .from #hours, body#new .container form .time .from #minutes, body#new .container form .time .till #hours, body#new .container form .time .till #minutes, body#edit .container form .time .from #hours, body#edit .container form .time .from #minutes, body#edit .container form .time .till #hours, body#edit .container form .time .till #minutes {
   font-size: 16px;
   margin-top: 16px;
 }
-/* line 37, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event section.time section.duration, body#edit .container form#new_event section.time section.duration {
+/* line 35, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .time .duration, body#edit .container form .time .duration {
   margin-left: 10px;
   margin-top: 30px;
 }
-/* line 40, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event section.time section.duration .layout-slider, body#edit .container form#new_event section.time section.duration .layout-slider {
+/* line 38, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .time .duration .layout-slider, body#edit .container form .time .duration .layout-slider {
   bottom: 20px;
   left: 85px;
   position: relative;
 }
-/* line 47, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event section.time section.to #time, body#new .container form#new_event section.time section.to #date, body#edit .container form#new_event section.time section.to #time, body#edit .container form#new_event section.time section.to #date {
-  margin-left: 60px;
+/* line 44, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .time .till, body#edit .container form .time .till {
+  margin-top: 10px;
 }
-/* line 52, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event #title, body#edit .container form#new_event #title {
+/* line 46, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .time .till #date_till, body#edit .container form .time .till #date_till {
+  margin-left: 35px;
+}
+/* line 51, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form #title, body#new .container form #description, body#edit .container form #title, body#edit .container form #description {
+  border: 1px solid #cccccc;
+  width: 410px;
+}
+/* line 55, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form #title, body#edit .container form #title {
   height: 20px;
 }
-/* line 56, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event #description, body#edit .container form#new_event #description {
-  width: 410px;
+/* line 58, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form #description, body#edit .container form #description {
   height: 60px;
-  border: 1px solid #cccccc;
 }
 /* line 61, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event .controls, body#edit .container form#new_event .controls {
+body#new .container form #members, body#edit .container form #members {
+  width: 412px;
+}
+/* line 64, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form #errors, body#edit .container form #errors {
+  margin-left: 70px;
+}
+/* line 67, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .controls, body#edit .container form .controls {
   width: 150px;
   margin-bottom: 20px;
 }
-/* line 64, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
-body#new .container form#new_event .controls .create_button, body#new .container form#new_event .controls .save_button, body#edit .container form#new_event .controls .create_button, body#edit .container form#new_event .controls .save_button {
+/* line 70, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+body#new .container form .controls .create_button, body#new .container form .controls .cancel_button, body#edit .container form .controls .create_button, body#edit .container form .controls .cancel_button {
   margin-right: 10px;
   width: 60px;
   height: 30px;
