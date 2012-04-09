@@ -5,6 +5,7 @@
 
 @import "compass/reset";
 @import "compass/css3/border-radius";
+@import "compass/css3/box";
 @import "compass/typography/text/ellipsis";
 
 
@@ -23,11 +24,11 @@
 
 
 
-
-
 @import '_events';
 @import '_event_detail';
 @import '_layout';
 
-
-
+// test of media queries...
+@media screen and (max-width: 800px) {
+	@import 'layout_medium';
+}

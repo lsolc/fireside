@@ -1036,3 +1036,188 @@ body#new .container form .controls .create_button, body#new .container form .con
   width: 60px;
   height: 30px;
 }
+
+/* line 1, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+.past_events, .current_day, .next_day, .future {
+  padding: 5px;
+}
+
+/* line 3, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index {
+  overflow: hidden;
+}
+/* line 5, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .actions {
+  height: 30px;
+  background-color: brown;
+}
+/* line 9, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  -moz-box-orient: horizontal;
+  -webkit-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  box-orient: horizontal;
+  -moz-box-align: stretch;
+  -webkit-box-align: stretch;
+  -ms-box-align: stretch;
+  box-align: stretch;
+  height: 800px;
+  max-width: 1400px;
+  margin-top: 15px;
+}
+/* line 18, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .members {
+  min-width: 100px;
+  background-color: orange;
+}
+/* line 25, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .content {
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -moz-box-align: stretch;
+  -webkit-box-align: stretch;
+  -ms-box-align: stretch;
+  box-align: stretch;
+}
+/* line 32, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .content .day_picker {
+  -moz-box-flex: 0;
+  -webkit-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  min-height: 40px;
+  background-color: beige;
+  margin: 0px 0px 10px 10px;
+}
+/* line 39, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .content .events {
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  min-height: 400px;
+  overflow-y: auto;
+  padding: 0px 10px;
+}
+/* line 46, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .content .events .events-left {
+  -moz-box-flex: 5;
+  -webkit-box-flex: 5;
+  -ms-box-flex: 5;
+  box-flex: 5;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -moz-box-align: stretch;
+  -webkit-box-align: stretch;
+  -ms-box-align: stretch;
+  box-align: stretch;
+}
+/* line 51, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .content .events .events-left .past_events {
+  -moz-box-flex: 0;
+  -webkit-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  background-color: silver;
+}
+/* line 55, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .content .events .events-left .current_day {
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  background-color: gray;
+}
+/* line 60, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .content .events .events-right {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  -moz-box-flex: 5;
+  -webkit-box-flex: 5;
+  -ms-box-flex: 5;
+  box-flex: 5;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+}
+/* line 65, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .content .events .events-right .next_day {
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  background-color: grey;
+}
+/* line 69, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+#index .main .content .events .events-right .future {
+  -moz-box-flex: 4;
+  -webkit-box-flex: 4;
+  -ms-box-flex: 4;
+  box-flex: 4;
+  background-color: silver;
+}
+
+@media screen and (max-width: 800px) {
+  /* line 3, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_medium.scss */
+  #index .main {
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+  }
+  /* line 4, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_medium.scss */
+  #index .events {
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+  }
+  /* line 5, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_medium.scss */
+  #index .members {
+    -moz-box-ordinal-group: 1;
+    -webkit-box-ordinal-group: 1;
+    -ms-box-ordinal-group: 1;
+    box-ordinal-group: 1;
+  }
+  /* line 6, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_medium.scss */
+  #index .content {
+    -moz-box-ordinal-group: 0;
+    -webkit-box-ordinal-group: 0;
+    -ms-box-ordinal-group: 0;
+    box-ordinal-group: 0;
+  }
+  /* line 7, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_medium.scss */
+  #index .day_picker {
+    -moz-box-ordinal-group: 2;
+    -webkit-box-ordinal-group: 2;
+    -ms-box-ordinal-group: 2;
+    box-ordinal-group: 2;
+  }
+}

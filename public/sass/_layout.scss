@@ -1,0 +1,77 @@
+.past_events, .current_day, .next_day, .future {padding: 5px;}
+
+#index {
+	overflow: hidden;
+	.actions {
+		height: 30px;
+		background-color: brown;
+	}
+	.main {
+		@include display-box;
+		@include box-orient(horizontal);
+		@include box-align(stretch);
+		//@include box-direction (reverse);
+		height:  800px;
+		//width: 100%;
+		max-width:  1400px;
+		margin-top: 15px;
+		.members {
+			//@include display-box;
+			//@include box-flex(1);
+			//position: relative;
+			min-width: 100px;
+			background-color: orange;
+		}
+		.content {
+			@include box-flex(1);
+			@include display-box;
+			@include box-orient(vertical);
+			@include box-align(stretch);
+			//width: 100%;		
+			
+			.day_picker {
+				@include box-flex(0);
+				//@include display-box;
+				min-height: 40px;
+				background-color: beige;
+				margin: 0px 0px 10px 10px;				
+			}
+			.events {
+				@include box-flex(1);
+				@include display-box;
+				//@include box-orient(horizontal);
+				min-height: 400px;
+				overflow-y: auto;
+				padding: 0px 10px;
+				.events-left {
+					@include box-flex(5);
+					@include display-box;
+					@include box-orient(vertical);
+					@include box-align(stretch);
+					.past_events {
+						@include box-flex(0);
+						background-color: silver;
+					}
+					.current_day {
+						@include box-flex(1);
+						background-color: gray;
+					}	
+				}
+				.events-right {
+					@include display-box;
+					@include box-flex(5);
+					@include box-orient(vertical);
+					//@include box-align(stretch);
+					.next_day {
+						@include box-flex(1);
+						background-color: grey;
+					}
+					.future {
+						@include box-flex(4);
+						background-color: silver;
+					}
+				}
+			}
+		}
+	}
+}
