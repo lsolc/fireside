@@ -14,7 +14,7 @@ def items
       :members => [1, 2],
       :duration_minutes => 60,
       :duration_hours => 4,
-      :title => "Vyzvednout Hynka ze skolky #{i}",      
+      :title => "Vyzvednout Hynka ze skolky, Vyzvednout Hynka ze skolky, Vyzvednout Hynka ze skolky #{i}",      
       :description => "Na zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit",
     }
   end
