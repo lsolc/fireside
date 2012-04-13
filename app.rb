@@ -3,6 +3,9 @@ require 'sinatra'
 require 'json'
 require 'date'
 
+mime_type :tmpl, "text/plain"
+mime_type :hbs, "text/x-handlebars-template"
+
 def items
   result = []
   2.times do |i|
@@ -19,6 +22,10 @@ def items
     }
   end
   result
+end
+
+get '/' do
+  File.read(File.join('public', 'index.html'))
 end
 
 get '/events/:id' do

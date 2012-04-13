@@ -1,11 +1,15 @@
-define([], function() {
+define(
+  [
+    'lib/date'
+  ], 
+  function() {
 	return Backbone.Model.extend({
 		defaults: {
 			title: 'New event', 
 			description: 'Some description text...', 
 			from_date: Date.now().toString('yyyy-MM-dd'), 
 			from_hours: Date.now().getHours(), 
-			from_minutes: 0,
+			from_minutes: 0
 		},
 		errors: [],
 		from: null,

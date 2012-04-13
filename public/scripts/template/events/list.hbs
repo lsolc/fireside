@@ -1,9 +1,9 @@
 {{#if many_items }}
 	{{#each events}}
-		{{> partial_detail}}
+		{{> template_events_list-partial-detail}}
 	{{/each}}
 {{else}}
 	{{#each events}}
-		{{> full_detail}}
+		{{> template_events_list-full-detail}}
 	{{/each}}
 {{/if}}
