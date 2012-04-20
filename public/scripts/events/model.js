@@ -11,6 +11,7 @@ define(
 			from_hours: Date.now().getHours(), 
 			from_minutes: 0
 		},
+		urlRoot: '/events',
 		errors: [],
 		from: null,
 		till: null,

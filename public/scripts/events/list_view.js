@@ -3,11 +3,10 @@ define([
 	'events/model',
 	'members/collection',
 	'events/collection',
-	'events/detail_view'
-	
-	
+	'events/detail_view',
+	'events/show_view'
 	], 
-	function(event_list_template, Event, Members, Events, EventView) {
+	function(event_list_template, Event, Members, Events, EventView, EventShowView) {
 		return Backbone.View.extend({
 			initialize: function() {
 				this.template = event_list_template;
