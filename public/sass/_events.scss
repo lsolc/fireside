@@ -1,7 +1,6 @@
-$event_width: 550px;
+$event_width: 310px;
 $photos_width: 64px;
 $actions_width: 50px;
-
 
 #events .current{	
 	width: 40%;
@@ -11,6 +10,7 @@ $actions_width: 50px;
 }
 
 section.event_item {
+	background-color: white;
 	width: $event_width;
 	margin: 15px 3px;
 	border-bottom: solid 1px $c_gray2;
@@ -32,7 +32,6 @@ section.event_item {
 			color: $c_gray5;
 		}
 		.action_panel {
-			
 			.actions {
 				float: right;
 				width: $actions_width;
@@ -52,9 +51,7 @@ section.event_item {
 				font-size: 0.5em;
 			}			
 		}		
-			
 	}
-	
 	> .details_panel {
 		margin: 12px;
 		color: $c_gray5;		
@@ -69,9 +66,7 @@ section.event_item.partial {
 		$top_panel_height: 40px;
 		$actions_height: 32px;
 		$header_height: $top_panel_height + $actions_height;
-		
 		height: $header_height; 
-				
 		.top_panel {
 			height: $top_panel_height;
 			.time_panel, .title {
@@ -80,7 +75,6 @@ section.event_item.partial {
 				height: $top_panel_height;
 				line-height: $top_panel_height;				
 			}
-			
 			.time_panel {
 				width: $time_panel_width;
 			}	
@@ -89,8 +83,7 @@ section.event_item.partial {
 				right: 0;
 				font-size: 12pt;					
 			}					
-		}		
-		
+		}	
 		.action_panel {
 			top: $top_panel_height;
 			height: $actions_height;
@@ -111,29 +104,24 @@ section.event_item.full {
 		$actions_height: 32px;
 		$top_panel_title_height: $top_panel_height + $title_height;
 		$header_height: $top_panel_title_height + $actions_height;
-		
 		height: $header_height; 
-		
 		.top_panel {
 			height: $top_panel_height;
 			width: 100%;
 			left: 0;
 			top: 0;		
 		}
-		
 		.title {
 			top: $top_panel_height;
 			height: $title_height;
 			width: 100%;
 			font-size: 15pt;
 		}
-		
 		.action_panel {
 			top: $top_panel_title_height;
 			height: $actions_height;			
 		}		
 	}
-	
 	> .details_panel {
 		width: $event_width;	
 	}	

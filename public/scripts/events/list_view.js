@@ -14,11 +14,18 @@ define([
 			},
 			render: function() {
 				var html_string, many_items;
+				
+				var event_show_view = new EventShowView({
+					list: App.current_event_list,
+					el: this.el
+				});
+				
 				many_items = this.list.length > 2;
 				html_string = this.template({events: this.list.toJSON(), many_items: many_items});
 				$(this.el).html(html_string);
 				return this;
 			}
+			
 		});
 	}
 );

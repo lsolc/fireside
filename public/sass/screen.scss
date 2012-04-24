@@ -17,21 +17,22 @@
 
 @import '_chosen';
 @import '_jslider';
+ 
+ 
+ 
 
 
 
 
 
-
-
-
-//@import '_events';
-@import '_events_working_copy';
-
+@import '_events';
 @import '_event_detail';
 @import '_layout';
 
-// test of media queries...
-@media screen and (max-width: 768px) {
+@media only screen and (min-width: 451px) and (max-width: 750px) {
 	@import 'layout_medium';
 }
+@media only screen and (min-width: 0px) and (max-width: 450px) {
+	@import 'layout_small';
+}
+

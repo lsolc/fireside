@@ -4,16 +4,13 @@ define(
 	'events/collection',
 	'events/detail_view',
 	'events/list_view',
-	
-	
-	'events/show_view'//
+	'events/show_view'
 	], 
 	function(Event, Events, EventDetailView, EventListView, EventShowView) {
 		var renderEvent = function(model) {
 			var edit_event_view = new EventDetailView({ model: model});
 			App.layout.detail_form.show(edit_event_view);     
 		}
-		
 		var AppRouter = Backbone.Router.extend({
 			routes: {
 				'': 'dashboard',
@@ -35,7 +32,6 @@ define(
 				App.layout.detail_form.show(new_event_view);
 			},
 			editEvent: function(id) {
-				
 				var model;
 				if (App.current_event_list) {
 					model = App.current_event_list.get(id);
@@ -49,7 +45,6 @@ define(
 						}
 					});
 				}
-				   
 			}
 		});
 		return AppRouter;

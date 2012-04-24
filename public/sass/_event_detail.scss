@@ -1,6 +1,6 @@
 ////body#new, body#edit {
 	.container {
-		width: 550px;
+		min-width: 550px;
 		border: 1px solid;
 		form {
 			border: 1px solid $c_gray2;	
@@ -57,6 +57,7 @@
 			}
 			#description {						
 				height: 60px;
+				
 			}
 			#members {
 				width: 412px;
@@ -67,10 +68,12 @@
 			.controls {				
 				width: 150px;	
 				margin-bottom: 20px;			
-				.create_button, .cancel_button {
+				.create_button {
 					margin-right: 10px;
 					width: 60px;
 					height: 30px;
+				}
+				a {				
 				}		
 			}
 		}			
