@@ -9,7 +9,9 @@ define(
 			regions: {
 				//current_day: ".current_day > .current",
 				current_day: ".current_day > .current, .past_events, .next_day, .future",
-				detail_form: ".detail_form"
+				detail_form: ".detail_form",
+				
+				members_section: ".members > div.photos"
 			},
 
 			initialize: function(){

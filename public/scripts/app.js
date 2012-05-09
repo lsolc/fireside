@@ -12,7 +12,7 @@ define(
 		App.addInitializer( function(options) {
 			this.members = new Members();
 			this.layout = new Layout({el: 'body'});
-			this.layout.render();
+			//this.layout.render();
 			var appRouter = new AppRouter();
 			Backbone.history.start();
 		});

@@ -25,7 +25,6 @@ define([
 				$(this.el).html(html_string);
 				return this;
 			}
-			
 		});
 	}
 );

@@ -53,8 +53,8 @@ get '/members' do
     },
     {
       :id => 2,
-      :display_name => 'Lada',
-      :image_url => 'lada.png'
+      :display_name => 'Anezka',
+      :image_url => 'anezka.png'
     }
     ].to_json
 end  

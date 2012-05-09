@@ -57,7 +57,7 @@ define([
 					format: {format: '##.0', locale: 'de'},
 					dimension: '&nbsp;hours',
 					skin: "round",
-					callback: function(value) {console.log(value);}
+					//callback: function(value) {console.log(value);}
 				});
 			},
 			show_end_date: function() {

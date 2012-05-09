@@ -943,96 +943,96 @@ section.event_item.full > .details_panel {
   width: 310px;
 }
 
-/* line 2, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 1, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container {
   min-width: 550px;
   border: 1px solid;
 }
-/* line 5, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 4, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form {
   border: 1px solid #cccccc;
   font-size: 16px;
   color: #ff5600;
 }
-/* line 9, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 8, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form h3 {
   background-color: #eeeeee;
   height: 15px;
   padding: 5px 0px 5px 10px;
   color: #ff5600;
 }
-/* line 15, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 14, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form #title, .container form #description, .container form .controls, .container form .members {
   margin-top: 16px;
   margin-left: 70px;
 }
-/* line 19, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 18, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form #date {
   margin-left: 10px;
 }
-/* line 22, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 21, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .time {
   height: 120px;
 }
-/* line 24, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 23, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .time .from, .container form .time .till {
   margin-left: 10px;
 }
-/* line 27, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 26, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .time .from #hours, .container form .time .till #hours {
   margin-left: 40px;
 }
-/* line 30, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 29, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .time .from #hours, .container form .time .from #minutes, .container form .time .till #hours, .container form .time .till #minutes {
   font-size: 16px;
   margin-top: 16px;
 }
-/* line 35, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 34, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .time .duration {
   margin-left: 10px;
   margin-top: 30px;
 }
-/* line 38, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 37, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .time .duration .layout-slider {
   bottom: 20px;
   left: 85px;
   position: relative;
 }
-/* line 44, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 43, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .time .till {
   margin-top: 10px;
 }
-/* line 46, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 45, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .time .till #date_till {
   margin-left: 35px;
 }
-/* line 51, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 50, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form #title, .container form #description {
   border: 1px solid #cccccc;
   width: 410px;
 }
-/* line 55, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 54, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form #title {
   height: 20px;
 }
-/* line 58, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 57, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form #description {
   height: 60px;
 }
-/* line 62, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 61, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form #members {
   width: 412px;
 }
-/* line 65, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 64, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form #errors {
   margin-left: 70px;
 }
-/* line 68, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 67, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .controls {
   width: 150px;
   margin-bottom: 20px;
 }
-/* line 71, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
+/* line 70, /Users/ladislavsolc/Projects/fireside/public/sass/_event_detail.scss */
 .container form .controls .create_button {
   margin-right: 10px;
   width: 60px;
@@ -1072,7 +1072,7 @@ body {
   width: 100%;
   position: fixed;
   background-color: brown;
-  z-index: 1;
+  z-index: 2;
 }
 /* line 25, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .members {
@@ -1116,7 +1116,7 @@ body {
   padding: 0px 10px;
 }
 /* line 51, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-#index .content .events .events-left {
+#index .content .events .events-now {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -1135,14 +1135,14 @@ body {
   box-align: stretch;
 }
 /* line 56, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-#index .content .events .events-left .past_events {
+#index .content .events .events-now .past_events {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   -ms-box-flex: 0;
   box-flex: 0;
 }
 /* line 59, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-#index .content .events .events-left .current_day {
+#index .content .events .events-now .current_day {
   position: relative;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -1150,12 +1150,12 @@ body {
   box-flex: 1;
 }
 /* line 62, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-#index .content .events .events-left .current_day .panel a {
+#index .content .events .events-now .current_day .panel a {
   position: absolute;
   right: 10px;
 }
 /* line 68, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-#index .content .events .events-right {
+#index .content .events .events-coming {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -1174,7 +1174,7 @@ body {
   box-align: stretch;
 }
 /* line 73, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-#index .content .events .events-right .next_day {
+#index .content .events .events-coming .next_day {
   position: relative;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -1182,16 +1182,63 @@ body {
   box-flex: 1;
 }
 /* line 75, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-#index .content .events .events-right .next_day .panel a {
+#index .content .events .events-coming .next_day .panel a {
   position: absolute;
   right: 10px;
 }
 /* line 81, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-#index .content .events .events-right .future {
+#index .content .events .events-coming .future {
   -webkit-box-flex: 4;
   -moz-box-flex: 4;
   -ms-box-flex: 4;
   box-flex: 4;
+}
+
+/* line 1, /Users/ladislavsolc/Projects/fireside/public/sass/_members.scss */
+.photos div.wrapper {
+  position: relative;
+}
+/* line 4, /Users/ladislavsolc/Projects/fireside/public/sass/_members.scss */
+.photos div.wrapper a img.edit {
+  background-color: green;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  z-index: 1;
+}
+
+/* line 1, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
+#member_form {
+  min-width: 320px;
+  border: 1px solid #cccccc;
+  font-size: 16px;
+  color: #ff5600;
+}
+/* line 6, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
+#member_form h3 {
+  background-color: #eeeeee;
+  height: 15px;
+  padding: 5px 0px 5px 10px;
+  color: #ff5600;
+}
+/* line 12, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
+#member_form #household, #member_form #name {
+  width: 200px;
+  margin: 15px 20px 0px;
+  display: block;
+}
+/* line 17, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
+#member_form .controls {
+  width: 150px;
+  margin: 15px 20px 20px;
+}
+/* line 20, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
+#member_form .controls .create_button {
+  margin-right: 10px;
+  width: 60px;
+  height: 30px;
 }
 
 @media only screen and (min-width: 451px) and (max-width: 750px) {

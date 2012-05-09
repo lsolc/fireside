@@ -4,9 +4,14 @@ define(
 	'events/collection',
 	'events/detail_view',
 	'events/list_view',
-	'events/show_view'
+	'events/show_view',
+	
+	'members/model',	
+	'members/detail_view',
+	'members/collection',
+	'members/show_view'
 	], 
-	function(Event, Events, EventDetailView, EventListView, EventShowView) {
+	function(Event, Events, EventDetailView, EventListView, EventShowView, Member, MemberDetailView, Members, MemberShowView) {
 		var renderEvent = function(model) {
 			var edit_event_view = new EventDetailView({ model: model});
 			App.layout.detail_form.show(edit_event_view);     
@@ -15,7 +20,9 @@ define(
 			routes: {
 				'': 'dashboard',
 				'events/new': 'newEvent',
-				'events/:id': 'editEvent'
+				'events/:id': 'editEvent',
+				'members/new': 'newMember',
+				'members/:id': 'editMember'
 			},
 			dashboard: function() {
 				App.layout.render();
@@ -26,6 +33,10 @@ define(
 						App.layout.current_day.show(event_list_view);
 					}
 				});
+				
+				var member_show_view = new MemberShowView();
+				App.layout.members_section.show(member_show_view);
+				
 			},
 			newEvent: function() {
 				var new_event_view = new EventDetailView({ model: new Event()});	
@@ -45,6 +56,16 @@ define(
 						}
 					});
 				}
+			},
+			newMember: function() {
+				var new_member_view = new MemberDetailView({ model: new Member()});
+				App.layout.detail_form.show(new_member_view);
+			},
+			editMember: function(id) {
+				var model;
+				model = App.members.get(id);
+				var edit_member_view = new MemberDetailView({ model: model});
+				App.layout.detail_form.show(edit_member_view);
 			}
 		});
 		return AppRouter;
