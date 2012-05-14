@@ -1211,30 +1211,31 @@ body {
 
 /* line 1, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
 #member_form {
+  margin-top: 50px;
   min-width: 320px;
   border: 1px solid #cccccc;
   font-size: 16px;
   color: #ff5600;
 }
-/* line 6, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
+/* line 10, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
 #member_form h3 {
   background-color: #eeeeee;
   height: 15px;
   padding: 5px 0px 5px 10px;
   color: #ff5600;
 }
-/* line 12, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
-#member_form #household, #member_form #name {
+/* line 16, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
+#member_form #name {
   width: 200px;
   margin: 15px 20px 0px;
   display: block;
 }
-/* line 17, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
+/* line 21, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
 #member_form .controls {
   width: 150px;
   margin: 15px 20px 20px;
 }
-/* line 20, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
+/* line 24, /Users/ladislavsolc/Projects/fireside/public/sass/_member_form.scss */
 #member_form .controls .create_button {
   margin-right: 10px;
   width: 60px;

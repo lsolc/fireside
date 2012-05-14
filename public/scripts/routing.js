@@ -9,9 +9,12 @@ define(
 	'members/model',	
 	'members/detail_view',
 	'members/collection',
-	'members/show_view'
+	'members/show_view',
+	
+	'members/em_detail_view',
+	'members/em_model'
 	], 
-	function(Event, Events, EventDetailView, EventListView, EventShowView, Member, MemberDetailView, Members, MemberShowView) {
+	function(Event, Events, EventDetailView, EventListView, EventShowView, Member, MemberDetailView, Members, MemberShowView, EmMemberDetailView, EmMember) {
 		var renderEvent = function(model) {
 			var edit_event_view = new EventDetailView({ model: model});
 			App.layout.detail_form.show(edit_event_view);     
@@ -58,14 +61,36 @@ define(
 				}
 			},
 			newMember: function() {
+				/*
 				var new_member_view = new MemberDetailView({ model: new Member()});
 				App.layout.detail_form.show(new_member_view);
+				*/
+				
+			
+				EmApp.new_member_view = EmMemberDetailView.create();
+				$(function() {
+					EmApp.new_member_view.appendTo('#index');
+				});
+				
+				
+				//EmApp.member = EmMember.create();				
 			},
 			editMember: function(id) {
+				/*
 				var model;
 				model = App.members.get(id);
 				var edit_member_view = new MemberDetailView({ model: model});
 				App.layout.detail_form.show(edit_member_view);
+				*/
+				
+				
+				/*
+				EmApp.memberController = Ember.ArrayController.create();		
+				$.get('members', function(data) {
+					//EmApp.memberController.set('content', data);
+					console.log(data);
+				});*/
+				
 			}
 		});
 		return AppRouter;

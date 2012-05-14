@@ -8,10 +8,37 @@
 	<script src="scripts/lib/base/jquery.js" type="text/javascript" charset="utf-8"></script>	
 	<script src="scripts/lib/base/underscore.js" type="text/javascript" charset="utf-8"></script>	
 	<script src="scripts/lib/base/backbone.js" type="text/javascript" charset="utf-8"></script>	
-	<script src="scripts/lib/base/backbone.marionette.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="scripts/lib/base/backbone.marionette.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	<script src="scripts/lib/base/ember-0.9.7.1.js" type="text/javascript" charset="utf-8"></script>
+	
+		
 	<script src="scripts/lib/base/handlebars.js" type="text/javascript" charset="utf-8"></script>	
 	<script src="scripts/require.js" data-main="scripts/main" type="text/javascript" charset="utf-8"></script>	
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />    
+	
+	
+	
+	
+	
+    <script type="text/x-handlebars" data-template-name="em_member_form">
+			<form id="member_form" action="" method="" accept-charset="utf-8">
+				<h3>Add Member</h3>
+				
+				<input type="text"   name="name" value="" id="name" placeholder="Name:">
+		
+				<ul id="errors"></ul>
+				<section class="controls">
+					<input type="button" {{{action "create_member" on="click"}}} value="Create" class="create_button">			
+					<a href="#/">Cancel</a>
+				</section>	
+				
+			</form>
+    </script>
+	
+   
+	
 </head>
 
 <body id="index"></body>

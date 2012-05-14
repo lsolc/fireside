@@ -1,4 +1,8 @@
 #member_form {
+	margin-top: 50px;
+	
+	
+	
 	min-width: 320px;	
 	border: 1px solid $c_gray2;	
 	font-size: 16px;
@@ -9,7 +13,7 @@
 		padding: 5px 0px 5px 10px;
 		color: $c_prm-1;
 	}
-	#household, #name {
+	#name {
 		width: 200px;
 		margin: 15px 20px 0px;
 		display: block;
