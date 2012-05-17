@@ -4,16 +4,10 @@ require(
 		baseUrl: '/scripts'
 	},
 	[
-	'members/em_app', 
-	'members/em_controller',
-	
-	
-	'app',
-	'init',
+	'em_app',
 	'lib/domReady!'
 	], 
 	function() {
-		App.start();
 	}
 );
 

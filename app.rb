@@ -5,6 +5,7 @@ require 'date'
 
 mime_type :tmpl, "text/plain"
 mime_type :hbs, "text/x-handlebars-template"
+mime_type :handlebars, "text/x-handlebars-template"
 
 def items
   result = []

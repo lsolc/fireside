@@ -1,56 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Fireside</title>	
-	
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-	<script src="scripts/lib/base/jquery.js" type="text/javascript" charset="utf-8"></script>	
-	<script src="scripts/lib/base/underscore.js" type="text/javascript" charset="utf-8"></script>	
-	<script src="scripts/lib/base/ember.js" type="text/javascript" charset="utf-8"></script>
-	<script src="scripts/lib/base/ember-rest.js" type="text/javascript" charset="utf-8"></script>
-	<script src="scripts/lib/base/handlebars.js" type="text/javascript" charset="utf-8"></script>	
-	<script src="scripts/require.js" data-main="scripts/main" type="text/javascript" charset="utf-8"></script>	
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />    
-  <script type="text/x-handlebars" data-template-name="calEvent-listItem">
-
-  {{#with content }}
-  <section class="event_item full" data-next-state="partial" data-id="{{id}}">
-    <header>
-      <section class="top_panel">
-        <span class="time_panel">
-          <span class="time">{{time_range}}</span>
-          <span class="duration">({{duration_hours}})</span>				
-        </span>			
-      </section>
-      <section class="title">		
-        {{title}}
-      </section>
-      <section class="action_panel">
-        <div class='photos'>				
-          <img src="/images/member.png" alt="person photo" />
-        </div>		
-        <section class="actions">
-          <img src="/images/icons/delete.png" alt="Delete" />
-
-          <a href="#/events/{{id}}"><img src="/images/icons/edit.png" alt="Edit">Edit</a>
-        </section>			
-      </section>
-      
-    </header>
-    <details class="details_panel">	
-      <div class='description'>{{description}}</div>	
-    </details>	
-  </section>
-  
-  {{/with}}
-
-
-  
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="main">
-
 <section id="actions"><a href="#/members/new">Add Member</a></section>
 
 <section class="members">
@@ -72,11 +19,7 @@
 					<span class="current_date">2012-04-10</span>
 					<a href="#/events/new">New Event</a>
 				</section>
-        <div class="current">
-          
-          {{view App.CalEventsView }}
-
-        </div>
+				<div class="current"></div>
 			</section>
 		</section>
 
@@ -111,10 +54,3 @@
 </section>
 
 
-    
-
-
-  </script> 	
-</head>
-
-<body id="index"></body>
