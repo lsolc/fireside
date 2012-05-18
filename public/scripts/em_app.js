@@ -11,15 +11,31 @@ define(
       resourceName:       'event',
       resourceProperties: ['title', 'description']
     });
+    App.Member  = Ember.Resource.extend({
+      resourceUrl:        '/members',
+      resourceName:       'member'
+    });
+
+    App.membersController = Ember.ResourceController.create({
+      resourceType: App.Member
+    });
+
 
     App.calEventsController = Ember.ResourceController.create({
       resourceType: App.CalEvent
     });
 
-    calEvents = App.calEventsController;
     App.MainView = Em.View.extend({
       templateName: 'main'
     });
+
+    App.MembersView = Em.CollectionView.extend({
+      contentBinding: 'App.membersController.content',
+      itemViewClass: Em.View.extend({
+        templateName: 'member-listItem'
+      })
+    });
+
 
 
     App.CalEventsView = Em.CollectionView.extend({
@@ -31,8 +47,9 @@ define(
 
 
 
-    $.when(App.calEventsController.findAll()).then(function() {
+    $.when(App.calEventsController.findAll(), App.membersController.findAll()).then(function() {
       console.log(App.calEventsController.content);
+      console.log(App.membersController.content);
       App.MainView.create().append();
     });
             

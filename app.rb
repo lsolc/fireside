@@ -45,17 +45,17 @@ get '/members' do
     {
       :id => 0,
       :display_name => 'Pepa',
-      :image_url => 'pepa.png'
+      :image_url => '/images/pepa.png'
     },
     {
       :id => 1,
       :display_name => 'Lida',
-      :image_url => 'lida.png'
+      :image_url => '/images/lida.png'
     },
     {
       :id => 2,
       :display_name => 'Anezka',
-      :image_url => 'anezka.png'
+      :image_url => '/images/anezka.png'
     }
     ].to_json
 end  

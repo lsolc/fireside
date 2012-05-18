@@ -9,12 +9,65 @@
 	<script src="scripts/lib/base/underscore.js" type="text/javascript" charset="utf-8"></script>	
 	<script src="scripts/lib/base/ember.js" type="text/javascript" charset="utf-8"></script>
 	<script src="scripts/lib/base/ember-rest.js" type="text/javascript" charset="utf-8"></script>
-	<script src="scripts/lib/base/handlebars.js" type="text/javascript" charset="utf-8"></script>	
 	<script src="scripts/require.js" data-main="scripts/main" type="text/javascript" charset="utf-8"></script>	
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />    
-  <script type="text/x-handlebars" data-template-name="calEvent-listItem">
+ 
+  
+  
+    
+    <script type="text/x-handlebars" rel="public/scripts/templates/calEvent/form.handlebars" data-template-name="calEvent-form">
+      <section class="container">	
+	<form id="new_event" action="new_submit" method="get" accept-charset="utf-8">
+		<h3>New Event</h3>
+		
+		<section class="time">			
+			<section class="from">
+				<span>From:</span>
+				<select id="hours">{{{show_hours model.from_hours}}}</select>
+				<span>:</span>
+				<select id="minutes">{{{show_minutes model.from_minutes}}}</select>
+				<span id="date">{{model.from_date}}</span>
+			</section>
+			
+			<section class="duration">
+				<span>Duration:</span>
+				<div class="layout-slider">
+					<input id="SliderSingle" type="slider" name="duration_hours" value="{{model.duration_hours}}	" />
+				</div>   
+			</section>
+			
+			<section class="till">
+				<span>To:</span>
+				<span id="date_till"></span>
+			</section>		    		
+		</section>	
+		
+		<input type="text"   name="" value="{{model.title}}" id="title" placeholder="Title:">
+		<textarea name="Name" rows="8" cols="40" maxlength="250" id="description" placeholder="Description:">{{model.description}}</textarea>		
 
-  {{#with content }}
+		<section class="members">
+			<select id="members" data-placeholder="Choose a member..." multiple="multiple">
+				{{#each all_members}}
+				<option {{should_be_selected this ../model.members}} value="{{this.id}}">{{this.display_name}}</option>	
+				{{/each}}											
+			</select>
+		</section>	
+		
+		<ul id="errors"></ul>
+		
+		<section class="controls">
+			<input type="button" value="Create" class="create_button">			
+			<a href="#/">Cancel</a>
+		</section>	
+	
+	</form>
+</section>
+    </script>    
+
+
+  
+    <script type="text/x-handlebars" rel="public/scripts/templates/calEvent/listItem.handlebars" data-template-name="calEvent-listItem">
+       {{#with content }}
   <section class="event_item full" data-next-state="partial" data-id="{{id}}">
     <header>
       <section class="top_panel">
@@ -46,15 +99,16 @@
   {{/with}}
 
 
+    </script>    
+
+
   
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="main">
-
-<section id="actions"><a href="#/members/new">Add Member</a></section>
+    <script type="text/x-handlebars" rel="public/scripts/templates/main.handlebars" data-template-name="main">
+      <section id="actions"><a href="#/members/new">Add Member</a></section>
 
 <section class="members">
-	<div class="photos">
+  <div class="photos">
+    {{view App.MembersView}}
 	</div>
 </section>
 
@@ -73,9 +127,7 @@
 					<a href="#/events/new">New Event</a>
 				</section>
         <div class="current">
-          
-          {{view App.CalEventsView }}
-
+          {{view App.CalEventsView}}
         </div>
 			</section>
 		</section>
@@ -111,10 +163,43 @@
 </section>
 
 
-    
+
+    </script>    
 
 
-  </script> 	
+  
+    <script type="text/x-handlebars" rel="public/scripts/templates/member/form.handlebars" data-template-name="member-form">
+      
+	<form id="member_form" action="" method="" accept-charset="utf-8">
+		<h3>Add Member</h3>
+		<input type="text"   name="household" value="" id="household" placeholder="Household:">
+		<input type="text"   name="name" value="{{model.display_name}}" id="name" placeholder="Name:">
+		
+		<ul id="errors"></ul>
+		<section class="controls">
+			<input type="button" value="Create" class="create_button">			
+			<a href="#/">Cancel</a>
+		</section>	
+	</form>
+
+    </script>    
+
+
+  
+    <script type="text/x-handlebars" rel="public/scripts/templates/member/listItem.handlebars" data-template-name="member-listItem">
+      {{#with content }}
+	<div class="wrapper">
+    <button type="button"><img {{bindAttr src="image_url"}} /></button>
+	</div>
+{{/with}}
+
+
+    </script>    
+
+
+
+  
+
 </head>
 
-<body id="index"></body>
+<body id="index"></body> 
