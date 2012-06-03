@@ -1039,32 +1039,16 @@ section.event_item.full > .details_panel {
   height: 30px;
 }
 
-/* line 1, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-html {
-  overflow: auto;
-}
-
-/* line 4, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
-body {
-  min-width: 100%;
-}
-
-/* line 7, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 9, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index {
+  min-width: 100%;
+  overflow: auto;
+  border: 2px solid green;
   background: #FFFFF2;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: box;
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -ms-box-orient: horizontal;
-  box-orient: horizontal;
   height: 1400px;
   max-width: 1024px;
-  margin-top: 15px;
 }
-/* line 16, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 21, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index #actions {
   top: 0px;
   left: 0px;
@@ -1074,35 +1058,40 @@ body {
   background-color: brown;
   z-index: 2;
 }
-/* line 25, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 33, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .members {
-  min-width: 100px;
-  margin-top: 30px;
+  top: 30px;
+  left: 0px;
+  width: 100px;
+  margin-top: 15px;
   background-color: orange;
+  position: fixed;
+  z-index: 1;
 }
-/* line 30, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 41, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .members img {
   display: block;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 38, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 49, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content {
-  margin-top: 30px;
+  top: 30px;
+  left: 100px;
+  position: relative;
+  border: 1px solid red;
+  margin: 15px 10px;
 }
-/* line 40, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 55, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .day_picker {
   min-height: 40px;
   background-color: beige;
   margin: 0px 0px 10px 10px;
 }
-/* line 46, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 60, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .events {
   display: -webkit-box;
   display: -moz-box;
@@ -1115,7 +1104,7 @@ body {
   min-height: 600px;
   padding: 0px 10px;
 }
-/* line 51, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 65, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .events .events-now {
   display: -webkit-box;
   display: -moz-box;
@@ -1134,14 +1123,14 @@ body {
   -ms-box-align: stretch;
   box-align: stretch;
 }
-/* line 56, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 70, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .events .events-now .past_events {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   -ms-box-flex: 0;
   box-flex: 0;
 }
-/* line 59, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 73, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .events .events-now .current_day {
   position: relative;
   -webkit-box-flex: 1;
@@ -1149,12 +1138,12 @@ body {
   -ms-box-flex: 1;
   box-flex: 1;
 }
-/* line 62, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 76, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .events .events-now .current_day .panel a {
   position: absolute;
   right: 10px;
 }
-/* line 68, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 82, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .events .events-coming {
   display: -webkit-box;
   display: -moz-box;
@@ -1173,7 +1162,7 @@ body {
   -ms-box-align: stretch;
   box-align: stretch;
 }
-/* line 73, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 87, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .events .events-coming .next_day {
   position: relative;
   -webkit-box-flex: 1;
@@ -1181,12 +1170,12 @@ body {
   -ms-box-flex: 1;
   box-flex: 1;
 }
-/* line 75, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 89, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .events .events-coming .next_day .panel a {
   position: absolute;
   right: 10px;
 }
-/* line 81, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
+/* line 95, /Users/ladislavsolc/Projects/fireside/public/sass/_layout.scss */
 #index .content .events .events-coming .future {
   -webkit-box-flex: 4;
   -moz-box-flex: 4;
@@ -1266,22 +1255,24 @@ body {
     display: none;
   }
   /* line 7, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_small.scss */
+  #index .content {
+    left: 0px;
+  }
+  /* line 9, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_small.scss */
   #index .content .day_picker {
     -webkit-box-ordinal-group: 2;
     -moz-box-ordinal-group: 2;
     -ms-box-ordinal-group: 2;
     box-ordinal-group: 2;
-    margin: 0px;
   }
-  /* line 11, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_small.scss */
+  /* line 13, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_small.scss */
   #index .content .events {
-    padding: 0px;
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
     -ms-box-orient: vertical;
     box-orient: vertical;
   }
-  /* line 15, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_small.scss */
+  /* line 23, /Users/ladislavsolc/Projects/fireside/public/sass/_layout_small.scss */
   #index section.event_item {
     margin: 2px 0px;
   }

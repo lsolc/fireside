@@ -1,18 +1,23 @@
 html{
-	overflow: auto;
+	//overflow: auto;
 }
 body {
-	min-width: 100%;
+	//min-width: 100%;
 }
+
+
 #index {
+	min-width: 100%;
+	overflow: auto;
+	border: 2px solid green;
+	$members_width: 100px;
 	$actions_height: 30px;
+	
 	background: #FFFFF2;
-	@include display-box;
-	@include box-orient(horizontal);
 	height:  1400px;
 	//width: 100%;
 	max-width:  1024px;
-	margin-top: 15px;
+	////margin-top: 15px;
 	#actions {
 		top: 0px;
 		left: 0px;
@@ -21,24 +26,33 @@ body {
 		position: fixed;
 		background-color: brown;
 		z-index: 2;
+		a {
+			//border: 1px solid;
+		}
 	}
 	.members {		
-		//@include box-flex(1);
-		min-width: 100px;
-		margin-top: $actions_height;
+		top: $actions_height;
+		left: 0px;
+		width: $members_width;
+		margin-top: 15px;
 		background-color: orange;
+		position: fixed; ////
+		z-index: 1;
 		img {
 			display: block;
-			margin-top: 10px;
-			margin-left: auto;
-			margin-right: auto;
+			//margin-top: 10px;
+			//margin-left: auto;
+			//margin-right: auto;
 			@include border-radius(5px);
 		}
 	}
 	.content {
-		margin-top: $actions_height;
+		top: $actions_height;
+		left: $members_width; //// 
+		position: relative;
+		border: 1px solid red;
+		margin: 15px 10px;
 		.day_picker {
-			//@include box-flex(0);
 			min-height: 40px;
 			background-color: beige;
 			margin: 0px 0px 10px 10px;				

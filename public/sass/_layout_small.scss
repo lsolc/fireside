@@ -4,14 +4,22 @@
 	.members {
 		display: none;
 	}
-	.content .day_picker {
-		@include box-ordinal-group(2);
-		margin: 0px;
-	}	
-	.content .events {
-		padding: 0px;
-		@include box-orient(vertical);
+	.content {
+		left: 0px; ////
+		.day_picker {
+			@include box-ordinal-group(2);
+			//margin: 0px;
+		}
+		.events {
+			//padding: 0px;
+			@include box-orient(vertical);
+		}
 	}
+	
+	
+	
+	
+	
 	section.event_item {
 		margin: 2px 0px;
 	}

@@ -1,28 +1,34 @@
-<section id="actions"><a href="#/members/new">Add Member</a></section>
+<section id="actions">
+	<a href="#/members/new" {{action "newMember" on="click"}}>Add Member</a>
+</section>
 
 <section class="members">
-  <div class="photos">
-    {{view App.MembersView}}
+	<div class="photos">
+		{{view App.MembersView}}
 	</div>
 </section>
 
 <section class="content">
-    
-	<section class="day_picker">day_picker</section>
+	<section class="day_picker">
+		day_picker
+	</section>
 	<section class="events">
-		<section class="detail_form"></section>
+		<section class="detail_form">
+		</section>				
+		
 		<section class="events-now">
-			<section class="past_events">past_events
-				<p>The specification describes a CSS box model optimized for user interface design. In the flexbox...  </p>
+			<section class="past_events">
+				past_events  {{view App.CalEventsView}}
 			</section>
+			
 			<section class="current_day">
 				<section class="panel">
 					<span class="current_date">2012-04-10</span>
 					<a href="#/events/new">New Event</a>
 				</section>
-        <div class="current">
-          {{view App.CalEventsView}}
-        </div>
+				<div class="current">
+					current  {{view App.CalEventsView}}
+				</div>
 			</section>
 		</section>
 
@@ -32,27 +38,16 @@
 					<span class="next_date">2012-04-10</span>
 					<a href="#/events/new">New Event</a>
 					<div class="next">
-
 					</div>
 				</section>
-
-				next_day
-
-				<p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
-
+				next_day  {{view App.CalEventsView}}
 			</section>
-			<section class="future">future
-
-				<p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
-				<p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
-
-
-				<p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
-				<p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
-				<p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p><p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
-
-			</section>
+			
+			<section class="future">
+				future  {{view App.CalEventsView}}
+			</section>			
 		</section>
+		
 	</section>
 </section>
 
