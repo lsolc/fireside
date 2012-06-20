@@ -1,0 +1,24 @@
+// PORTRAIT TABLET TO DEFAULT DESKTOP
+// ----------------------------------
+
+@media (min-width: 768px) and (max-width: 979px) {
+	#index .sidebar .date button {
+		margin-top: 20px;
+	
+	}
+	#index .members {
+	    //position: absolute;
+		margin-top: 70px;	    
+	}	
+	
+	#index #actions {
+		position: fixed;
+	}
+	
+	#index .content {
+	    margin-top: 70px;
+	}
+}
+
+
+ 

@@ -1,54 +1,73 @@
-<section id="actions">
-	<a href="#/members/new" {{action "newMember" on="click"}}>Add Member</a>
-</section>
-
-<section class="members">
-	<div class="photos">
-		{{view App.MembersView}}
+<section id="actions" class="navbar navbar-fixed-top">
+	<!--<a href="#/members/new" {{action "newMember" on="click"}}>Add Member</a>-->
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">Project name</a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
 	</div>
 </section>
 
-<section class="content">
-	<section class="day_picker">
-		day_picker
-	</section>
-	<section class="events">
-		<section class="detail_form">
-		</section>				
-		
-		<section class="events-now">
-			<section class="past_events">
-				past_events  {{view App.CalEventsView}}
-			</section>
-			
-			<section class="current_day">
-				<section class="panel">
-					<span class="current_date">2012-04-10</span>
-					<a href="#/events/new">New Event</a>
-				</section>
-				<div class="current">
-					current  {{view App.CalEventsView}}
-				</div>
-			</section>
-		</section>
+	
+<div class="container-fluid">
+	<div class="row-fluid">
+		<aside class="sidebar hidden-phone span2"> <!-- .hidden-phone	-->
+			<div class="date"><button><div><br />12</div></button></div>			
+			<div class="members">{{view App.MembersView}}</div>
+		</aside>
 
-		<section class="events-coming">
-			<section class="next_day">
-				<section class="panel">
-					<span class="next_date">2012-04-10</span>
-					<a href="#/events/new">New Event</a>
-					<div class="next">
-					</div>
-				</section>
-				next_day  {{view App.CalEventsView}}
+		<section class="content span10">
+			<section class="day_picker hidden-phone"> <!-- .hidden-phone -->
+				day_picker
 			</section>
-			
-			<section class="future">
-				future  {{view App.CalEventsView}}
-			</section>			
-		</section>
-		
-	</section>
-</section>
+			<section class="events row-fluid">
+								
+					<section class="events_now span7">						
+						<section class="detail_form"></section>				
+						<section class="past_events">
+								<span>Older Events</span>
+							{{view App.CalEventsView}}						
+						</section>
+						
+						<section class="current_day">
+								<span>Today</span>
+								<!--<a href="#/events/new">New Event</a>-->
+								<a href="#/events/new" {{action "newEvent"}}>New Event</a>
+							<section class="current">
+								{{view App.CalEventsView}}
+							</section>
+						</section>
+					</section>
 
+					<section class="events_coming span5">
+						<section class="next_day">
+								<span>Tomorrow</span>
+								<a href="#/events/new">New Event</a>							
+							<section class="next">
+								{{view App.CalEventsView}}
+							</section>
+						</section>
+						
+						<section class="future">
+							<span>Future</span>
+							{{view App.CalEventsView}}
+						</section>			
+					</section>
+				
+		
+				</section>
+			</section>
+		</div>
+	</div> <!-- /.container-fluid -->
 

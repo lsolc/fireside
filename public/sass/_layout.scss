@@ -1,100 +1,95 @@
-html{
-	//overflow: auto;
-}
-body {
-	//min-width: 100%;
-}
-
-
-#index {
-	min-width: 100%;
-	overflow: auto;
-	border: 2px solid green;
-	$members_width: 100px;
-	$actions_height: 30px;
-	
-	background: #FFFFF2;
-	height:  1400px;
-	//width: 100%;
-	max-width:  1024px;
-	////margin-top: 15px;
+#index {	
+	$width_member_button: 80px;
+	background: #FFFFF2;	
 	#actions {
-		top: 0px;
-		left: 0px;
-		height: $actions_height;
-		width: 100%;
+		box-shadow: 2px 2px 5px #888888;
+		//background-color: brown;
+	}	
+	.sidebar {	
+		//border: 1px dotted red;
 		position: fixed;
-		background-color: brown;
-		z-index: 2;
-		a {
-			//border: 1px solid;
+		width: 80px;
+		height: 100%;
+		bottom: 0;
+		padding-top: 60px;
+		
+		.date button, .members button {
+			width: 80px;
+			height: 80px;
 		}
-	}
-	.members {		
-		top: $actions_height;
-		left: 0px;
-		width: $members_width;
-		margin-top: 15px;
-		background-color: orange;
-		position: fixed; ////
-		z-index: 1;
-		img {
-			display: block;
-			//margin-top: 10px;
-			//margin-left: auto;
-			//margin-right: auto;
-			@include border-radius(5px);
+		.date {
+			//border: 1px dotted green;
+			button {
+				font-size: 36px;
+				font-weight: bold;
+				color: white;
+				background-color: white;
+				box-shadow: 2px 2px 5px #888888;
+				@include border-radius(5px);
+				div {
+					width: 65px;
+					height: 65px;
+					background-color: $c_gray3;
+					color: white;
+				}
+			}
+		}
+		.members {
+			//border: 1px dotted blue;
+			top: 150px;
+			right: 0px;
+			bottom: 0px;
+			width: 100px;
+			height:auto;
+			position: absolute;
+			overflow: auto;	
+			direction: rtl;
+			button {
+				background-color: white;
+				font-size: 10px;
+				margin-bottom: 10px;
+				padding: 5px;
+				box-shadow: 2px 2px 5px #888888;
+				@include border-radius(5px);
+			}
+			img {	
+				width: 100%;			
+				@include border-radius(5px);
+			}
 		}
 	}
 	.content {
-		top: $actions_height;
-		left: $members_width; //// 
-		position: relative;
-		border: 1px solid red;
-		margin: 15px 10px;
+		margin-left: 100px;
 		.day_picker {
-			min-height: 40px;
+			min-height: 30px;
+			padding: 5px;
+			@include border-radius(5px);
+			box-shadow: 2px 2px 5px #888888;
 			background-color: beige;
-			margin: 0px 0px 10px 10px;				
+			
 		}
 		.events {
-			@include display-box;
-			@include box-orient(horizontal);
-			min-height: 600px;
-			padding: 0px 10px;
-			.events-now {
-				@include display-box;
-				@include box-flex(1);
-				@include box-orient(vertical);
-				@include box-align(stretch);
-				.past_events {
-					@include box-flex(0);;
+			.past_events, .next_day, .current_day, .future {
+				margin-top: 20px;		
+				background-color: beige;
+				padding: 5px 0px 2px;
+				@include border-radius(10px);
+				> span {
+					font-weight: bold;
+					color: $c_gray5;
+					margin: 0px 20px;
 				}
-				.current_day {
-					position: relative;
-					@include box-flex(1);
-					.panel a {
-						position: absolute;
-						right: 10px;
-					}
-				}	
 			}
-			.events-coming {
-				@include display-box;
-				@include box-flex(1);
-				@include box-orient(vertical);
-				@include box-align(stretch);
-				.next_day {
-					position: relative;
-					.panel a {
-						position: absolute;
-						right: 10px;
-					}
-					@include box-flex(1);
+			.past_events {
+				> span {
+					//color: tomato;
 				}
-				.future {
-					@include box-flex(4);
-				}
+			}
+			.next_day {		
+			}				
+			.current_day {
+			}
+			.future {
 			}
 		}
 	}

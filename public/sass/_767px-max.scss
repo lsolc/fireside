@@ -1,0 +1,30 @@
+// UP TO LANDSCAPE PHONE
+// ---------------------
+
+@media (max-width: 480px) {
+	
+	#index {
+		padding: 0px;
+		#actions {
+			margin: 0px;
+			padding: 0px;
+		}
+		//.content .events .past_events { margin-top: 5px;}
+		.event_item {margin: 4px;}
+	}
+}
+
+// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+// --------------------------------------------------
+
+@media (max-width: 767px) {
+	
+	#index div.container-fluid div.row-fluid .content {
+		margin-left: 0px;
+		//margin-left: -10px;
+		//margin-right: -10px;
+	}
+	#index .members {	
+		//position: fixed;	
+	}
+}

@@ -56,7 +56,21 @@ get '/members' do
       :id => 2,
       :display_name => 'Anezka',
       :image_url => '/images/anezka.png'
+    },
+    {
+      :id => 3,
+      :display_name => 'Hynek',
+      :image_url => '/images/hynek.png'
+    },
+    
+    {
+      :id => 4,
+      :display_name => 'Vitek',
+      :image_url => '/images/vitek.png'
     }
+    
+    
+    
     ].to_json
 end  
 
