@@ -1,37 +1,40 @@
-desc "Find and combine all *.handlebars files into one templates file 'all.html'"
+APPNAME = 'fireside'
+require 'colored'
+require 'rake-pipeline'
+
+task :default => :build
 
 
-namespace :hbs do
-  HBS_DIR = 'public/scripts/templates/'
-  HBS_OUTPUT_FILE = "#{HBS_DIR}all.dev.js"
-  HBS_LAYOUT_FILE = 'public/index.tmpl'
-  HBS_LAYOUT_OUTPUT_FILE = 'public/index.html'
-  HBS_SOURCE_TEMPLATE = <<-DOC
-  
-    <script type="text/x-handlebars" rel="{{file_name}}" data-template-name="{{key}}">
-      {{content}}
-    </script>    
-  DOC
-  
-  def compose(f)
-    file_name = f.gsub( /#{HBS_DIR}/, '')
-    key = file_name.gsub(/\//, '-').gsub(/\.handlebars/, '')
-    content = File.read(f)
-    HBS_SOURCE_TEMPLATE.gsub(/{{key}}/, key).gsub(/{{content}}/, content).gsub(/{{file_name}}/, f)
-  end
-
-  task :build  do
-    output = ""
-    templates = Dir.glob("#{HBS_DIR}**/*.handlebars")
-    templates.each do |f|
-      output << compose(f) + "\n\n"
-    end
-    layout = File.read(HBS_LAYOUT_FILE)
-    File.open(HBS_LAYOUT_OUTPUT_FILE, 'w') { |f| f.write layout.gsub('{{HBS}}', output ) }
-    puts "All Handlebars templates were injected into file '#{HBS_LAYOUT_OUTPUT_FILE}'"
-  end
-
+desc "Build #{APPNAME}"
+task :build do
+  Rake::Pipeline::Project.new('Assetfile').invoke
 end
+
+task :sass do
+  `sass app/css/app.scss app/css/app.css --compass`
+  `sass app/css/bootstrap.scss app/css/bootstrap.css`
+end
+
+desc "Run tests with PhantomJS"
+task :test => :build do
+  unless system("which phantomjs > /dev/null 2>&1")
+    abort "PhantomJS is not installed. Download from http://phantomjs.org/"
+  end
+
+  cmd = "phantomjs tests/run-tests.js \"file://#{File.dirname(__FILE__)}/tests/index.html\""
+
+  # Run the tests
+  puts "Running #{APPNAME} tests"
+  success = system(cmd)
+
+  if success
+    puts "Tests Passed".green
+  else
+    puts "Tests Failed".red
+    exit(1)
+  end
+end
+
 namespace :em do
   task :update do
     puts 'Building ember.js ...'
@@ -41,7 +44,5 @@ namespace :em do
   end
 end
 
-task :build => [ 'hbs:build' ]
-task :default => :build
 
 
