@@ -30,6 +30,15 @@ namespace :hbs do
     File.open(HBS_LAYOUT_OUTPUT_FILE, 'w') { |f| f.write layout.gsub('{{HBS}}', output ) }
     puts "All Handlebars templates were injected into file '#{HBS_LAYOUT_OUTPUT_FILE}'"
   end
+
+end
+namespace :em do
+  task :update do
+    puts 'Building ember.js ...'
+    puts `cd ../ember.js/ && git pull && rake && cp dist/ember.js ../fireside/public/scripts/lib/base`
+    puts 'Building ember-data'
+    puts `cd ../ember-data/ && git pull && rake && cp dist/ember-data.js ../fireside/public/scripts/lib/base`
+  end
 end
 
 task :build => [ 'hbs:build' ]

@@ -8,10 +8,15 @@
 	<script src="scripts/lib/base/jquery.js" type="text/javascript" charset="utf-8"></script>	
 	<script src="scripts/lib/base/underscore.js" type="text/javascript" charset="utf-8"></script>	
 	<script src="scripts/lib/base/ember.js" type="text/javascript" charset="utf-8"></script>
+<<<<<<< HEAD
 	<script src="scripts/lib/base/ember-rest.js" type="text/javascript" charset="utf-8"></script>
 	<script src="scripts/require.js" data-main="scripts/main" type="text/javascript" charset="utf-8"></script>
 	
 	<link href="stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />			 		
+=======
+	<script src="scripts/lib/base/ember-data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="scripts/em_app.js" type="text/javascript" charset="utf-8"></script>
+>>>>>>> ember
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />    
 	
 	
@@ -19,6 +24,27 @@
   
   
 	  
+    <script type="text/x-handlebars" rel="public/scripts/templates/application.handlebars" data-template-name="application">
+      <section class="navigation">
+  {{outlet nav}}
+</section>
+
+<section class="sidebar">
+    {{outlet sidebar}}
+</section>
+
+<section class="content">
+  {{outlet content}}
+</section>
+
+
+
+
+
+    </script>    
+
+
+  
     <script type="text/x-handlebars" rel="public/scripts/templates/calEvent/form.handlebars" data-template-name="calEvent-form">
       <section class="container">	
 	<form id="new_event" action="new_submit" method="get" accept-charset="utf-8">
@@ -99,79 +125,57 @@
 
 
   
-    <script type="text/x-handlebars" rel="public/scripts/templates/main.handlebars" data-template-name="main">
-      <section id="actions" class="navbar navbar-fixed-top">
-	<!--<a href="#/members/new" {{action "newMember" on="click"}}>Add Member</a>-->
-	<div class="navbar-inner">
-		<div class="container-fluid">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
-			<a class="brand" href="#">Project name</a>
-			<div class="nav-collapse">
-				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</div><!--/.nav-collapse -->
-		</div>
-	</div>
+    <script type="text/x-handlebars" rel="public/scripts/templates/events.handlebars" data-template-name="events">
+      
+
+<section class="day_picker">day_picker</section>
+<section class="events">
+  <section class="detail_form"></section>
+  <section class="events-now">
+    <section class="past_events">past_events
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox...  </p>
+    </section>
+    <section class="current_day">
+      <section class="panel">
+        <span class="current_date">2012-04-10</span>
+        <a href="#/events/new">New Event</a>
+      </section>
+      <div class="current">
+        {view App.CalEventsView}
+      </div>
+    </section>
+  </section>
+
+  <section class="events-coming">
+    <section class="next_day">
+      <section class="panel">
+        <span class="next_date">2012-04-10</span>
+        <a href="#/events/new">New Event</a>
+        <div class="next">
+
+        </div>
+      </section>
+
+      next_day
+
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+
+    </section>
+    <section class="future">future
+
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+
+
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p><p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+
+    </section>
+  </section>
 </section>
 
-	
-<div class="container-fluid">
-	<div class="row-fluid">
-		<aside class="sidebar hidden-phone span2"> <!-- .hidden-phone	-->
-			<div class="date"><button><div><br />12</div></button></div>			
-			<div class="members">{{view App.MembersView}}</div>
-		</aside>
 
-		<section class="content span10">
-			<section class="day_picker hidden-phone"> <!-- .hidden-phone -->
-				day_picker
-			</section>
-			<section class="events row-fluid">
-								
-					<section class="events_now span7">						
-						<section class="detail_form"></section>				
-						<section class="past_events">
-								<span>Older Events</span>
-							{{view App.CalEventsView}}						
-						</section>
-						
-						<section class="current_day">
-								<span>Today</span>
-								<!--<a href="#/events/new">New Event</a>-->
-								<a href="#/events/new" {{action "newEvent"}}>New Event</a>
-							<section class="current">
-								{{view App.CalEventsView}}
-							</section>
-						</section>
-					</section>
-
-					<section class="events_coming span5">
-						<section class="next_day">
-								<span>Tomorrow</span>
-								<a href="#/events/new">New Event</a>							
-							<section class="next">
-								{{view App.CalEventsView}}
-							</section>
-						</section>
-						
-						<section class="future">
-							<span>Future</span>
-							{{view App.CalEventsView}}
-						</section>			
-					</section>
-				
-		
-				</section>
-			</section>
-		</div>
-	</div> <!-- /.container-fluid -->
 
 
     </script>    
@@ -197,12 +201,19 @@
 
   
     <script type="text/x-handlebars" rel="public/scripts/templates/member/listItem.handlebars" data-template-name="member-listItem">
-      {{#with content}}
+      <<<<<<< HEAD
+{{#with content}}
 	<button type="button"><img {{bindAttr src="image_url"}} /><!--{{display_name}}--></button>
 {{/with}}
 
 
 
+=======
+asasda
+  <div class="wrapper">
+    <button type="button"><img {{bindAttr src="image_url"}} /></button>
+	</div>
+>>>>>>> ember
 
     </script>    
 

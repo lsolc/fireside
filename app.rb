@@ -22,19 +22,19 @@ def items
       :description => "Na zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit",
     }
   end
-  result
+  { cal_events: result }
 end
 
 get '/' do
   File.read(File.join('public', 'index.html'))
 end
 
-get '/events/:id' do
+get '/cal_events/:id' do
   content_type 'application/json', :charset => 'utf-8'
   items[params[:id].to_i].to_json
 end
 
-get '/events' do
+get '/cal_events' do
   content_type 'application/json', :charset => 'utf-8'
   items.to_json
 end
@@ -68,9 +68,6 @@ get '/members' do
       :display_name => 'Vitek',
       :image_url => '/images/vitek.png'
     }
-    
-    
-    
     ].to_json
 end  
 
