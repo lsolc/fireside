@@ -1,78 +1,98 @@
-define(
-  [
-  ],
 
-  function() {
-  
-    window.App = Em.Application.create();
-
-    App.CalEvent  = Ember.Resource.extend({
-      resourceUrl:        '/events',
-      resourceName:       'event',
-      resourceProperties: ['title', 'description']
-    });
-    App.Member  = Ember.Resource.extend({
-      resourceUrl:        '/members',
-      resourceName:       'member'
-    });
-
-    App.membersController = Ember.ResourceController.create({
-      resourceType: App.Member
-    });
-
-
-    App.calEventsController = Ember.ResourceController.create({
-      resourceType: App.CalEvent
-    });
-
-    App.MainView = Em.View.extend({
-      templateName: 'main'
-    });
-
-    App.MembersView = Em.CollectionView.extend({
-      contentBinding: 'App.membersController.content',
-      itemViewClass: Em.View.extend({
-        templateName: 'member-listItem'
-      })
-    });
+// App.store = DS.Store.create({
+//   revision: 4,
+//   adapter: DS.RESTAdapter.create({ bulkCommit: false })
+// });
 
 
 
-    App.CalEventsView = Em.CollectionView.extend({
-      contentBinding: 'App.calEventsController.content',
-      itemViewClass: Em.View.extend({
-        templateName: 'calEvent-listItem'
-      })
-    });
+// App.CalEvent = DS.Model.extend({
+//   title: DS.attr('string'),
+//   description: DS.attr('string')
+// });
 
 
 
-    $.when(App.calEventsController.findAll(), App.membersController.findAll()).then(function() {
-      console.log(App.calEventsController.content);
-      console.log(App.membersController.content);
-      App.MainView.create().append();
-    });
-            
+// App.Member  = DS.Model.extend({});
+
+// App.calEventsController = App.store.findAll(App.CalEvent);
+
+// App.membersController = App.store.findAll(App.Member);
 
 
 
-            
-    
-    App.HomeState = Em.State.extend({
-      route: "/",
-      setupContext: function(manager) {
-        manager.set('currentView', App.CalEventsView.create({
-          controller: manager.get('calEventsController')
-        }));
+// App.MainView = Em.View.extend({
+//   templateName: 'main'
+// });
+
+
+
+
+// App.CalEventsView = Em.CollectionView.extend({
+//   contentBinding: 'App.calEventsController.content',
+//   itemViewClass: Em.View.extend({
+//     templateName: 'calEvent-listItem'
+//   })
+// });
+
+
+
+App = Em.Application.create({});
+var router =  Em.Router.create({
+  location: 'hash',
+  enableLogging: true,
+  root: Em.Route.extend({
+    index: Ember.Route.extend({
+      route: '/',
+      connectOutlets: function(router) {
+        router.get('applicationController').connectOutlet({
+          outletName: 'sidebar',
+          name: 'members'
+        });
+        router.get('applicationController').connectOutlet({
+          outletName: 'content',
+          name: 'events'
+        });
+
       }
-    });
+    })
+  })
+});
+
+App.ApplicationController = Em.ArrayController.extend();
+App.MainController = Em.ArrayController.extend();
+App.ApplicationView = Em.View.extend({
+  templateName: 'application'
+});
+App.MembersView = Em.CollectionView.extend({
+  content: [ { image_url: 'pepa.png' }, { image_url: 'lida.png' }],
+  itemViewClass: Em.View.extend({
+    templateName: 'member-listItem' 
+  })
+});
+
+App.EventsView =  Em.View.extend({
+  templateName: 'events'
+});
+
+App.EventsController = Em.ArrayController.extend({
+  });
 
 
-    App.stateManager = Ember.StateManager.create({
-      start: App.HomeState
-    });
-    
-    App.stateManager.getPath('currentState.name');
+App.MembersController = Em.ArrayController.extend({
+  });
 
-  }
-);
+
+
+App.initialize(router);
+
+
+
+
+
+
+
+
+
+
+

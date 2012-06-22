@@ -22,41 +22,44 @@ def items
       :description => "Na zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit",
     }
   end
-  result
+  { cal_events: result }
 end
 
 get '/' do
   File.read(File.join('public', 'index.html'))
 end
 
-get '/events/:id' do
+get '/cal_events/:id' do
   content_type 'application/json', :charset => 'utf-8'
   items[params[:id].to_i].to_json
 end
 
-get '/events' do
+get '/cal_events' do
   content_type 'application/json', :charset => 'utf-8'
   items.to_json
 end
 
 get '/members' do
   content_type 'application/json', :charset => 'utf-8'
-  [
-    {
-      :id => 0,
-      :display_name => 'Pepa',
-      :image_url => '/images/pepa.png'
-    },
-    {
-      :id => 1,
-      :display_name => 'Lida',
-      :image_url => '/images/lida.png'
-    },
-    {
-      :id => 2,
-      :display_name => 'Anezka',
-      :image_url => '/images/anezka.png'
-    }
-    ].to_json
+  { 
+    :members =>
+    [
+      {
+        :id => 0,
+        :display_name => 'Pepa',
+        :image_url => '/images/pepa.png'
+      },
+      {
+        :id => 1,
+        :display_name => 'Lida',
+        :image_url => '/images/lida.png'
+      },
+      {
+        :id => 2,
+        :display_name => 'Anezka',
+        :image_url => '/images/anezka.png'
+      }
+    ]
+  }
 end  
 

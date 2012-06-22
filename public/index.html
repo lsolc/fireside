@@ -8,13 +8,34 @@
 	<script src="scripts/lib/base/jquery.js" type="text/javascript" charset="utf-8"></script>	
 	<script src="scripts/lib/base/underscore.js" type="text/javascript" charset="utf-8"></script>	
 	<script src="scripts/lib/base/ember.js" type="text/javascript" charset="utf-8"></script>
-	<script src="scripts/lib/base/ember-rest.js" type="text/javascript" charset="utf-8"></script>
-	<script src="scripts/require.js" data-main="scripts/main" type="text/javascript" charset="utf-8"></script>	
+	<script src="scripts/lib/base/ember-data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="scripts/em_app.js" type="text/javascript" charset="utf-8"></script>
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />    
  
   
   
     
+    <script type="text/x-handlebars" rel="public/scripts/templates/application.handlebars" data-template-name="application">
+      <section class="navigation">
+  {{outlet nav}}
+</section>
+
+<section class="sidebar">
+    {{outlet sidebar}}
+</section>
+
+<section class="content">
+  {{outlet content}}
+</section>
+
+
+
+
+
+    </script>    
+
+
+  
     <script type="text/x-handlebars" rel="public/scripts/templates/calEvent/form.handlebars" data-template-name="calEvent-form">
       <section class="container">	
 	<form id="new_event" action="new_submit" method="get" accept-charset="utf-8">
@@ -103,12 +124,69 @@
 
 
   
+    <script type="text/x-handlebars" rel="public/scripts/templates/events.handlebars" data-template-name="events">
+      
+
+<section class="day_picker">day_picker</section>
+<section class="events">
+  <section class="detail_form"></section>
+  <section class="events-now">
+    <section class="past_events">past_events
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox...  </p>
+    </section>
+    <section class="current_day">
+      <section class="panel">
+        <span class="current_date">2012-04-10</span>
+        <a href="#/events/new">New Event</a>
+      </section>
+      <div class="current">
+        {view App.CalEventsView}
+      </div>
+    </section>
+  </section>
+
+  <section class="events-coming">
+    <section class="next_day">
+      <section class="panel">
+        <span class="next_date">2012-04-10</span>
+        <a href="#/events/new">New Event</a>
+        <div class="next">
+
+        </div>
+      </section>
+
+      next_day
+
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+
+    </section>
+    <section class="future">future
+
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+
+
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+      <p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p><p>The specification describes a CSS box model optimized for user interface design. In the flexbox layout model, the children of a flexbox can be laid out in any direction, and can "flex" their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated. Nesting of these boxes (horizontal inside vertical, or vertical inside horizontal) can be used to build layouts in two dimensions. </p>
+
+    </section>
+  </section>
+</section>
+
+
+
+
+    </script>    
+
+
+  
     <script type="text/x-handlebars" rel="public/scripts/templates/main.handlebars" data-template-name="main">
       <section id="actions"><a href="#/members/new">Add Member</a></section>
 
 <section class="members">
   <div class="photos">
-    {{view App.MembersView}}
+    {view App.MembersView}
 	</div>
 </section>
 
@@ -127,7 +205,7 @@
 					<a href="#/events/new">New Event</a>
 				</section>
         <div class="current">
-          {{view App.CalEventsView}}
+          {view App.CalEventsView}
         </div>
 			</section>
 		</section>
@@ -187,12 +265,10 @@
 
   
     <script type="text/x-handlebars" rel="public/scripts/templates/member/listItem.handlebars" data-template-name="member-listItem">
-      {{#with content }}
-	<div class="wrapper">
+      asasda
+  <div class="wrapper">
     <button type="button"><img {{bindAttr src="image_url"}} /></button>
 	</div>
-{{/with}}
-
 
     </script>    
 
