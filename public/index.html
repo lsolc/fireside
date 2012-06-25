@@ -19,6 +19,13 @@
   
   
 	  
+    <script type="text/x-handlebars" rel="public/scripts/templates/application.handlebars" data-template-name="application">
+      <h1>My Application</h1>
+{{outlet}}
+    </script>    
+
+
+  
     <script type="text/x-handlebars" rel="public/scripts/templates/calEvent/form.handlebars" data-template-name="calEvent-form">
       <section class="container">	
 	<form id="new_event" action="new_submit" method="get" accept-charset="utf-8">
@@ -198,8 +205,15 @@
   
     <script type="text/x-handlebars" rel="public/scripts/templates/member/listItem.handlebars" data-template-name="member-listItem">
       {{#with content}}
-	<button type="button"><img {{bindAttr src="image_url"}} /><!--{{display_name}}--></button>
+	<button type="button"><img {{bindAttr src="image_url"}} /></button>
 {{/with}}
+
+
+<!--
+{{#with content}}
+	<button type="button"><img {{bindAttr src="image_url"}} /></button>
+{{/with}}-->
+
 
 
 
