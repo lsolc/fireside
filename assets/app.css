@@ -709,20 +709,20 @@ section.event_item.partial > header {
         width: 60px;
         height: 30px; }
 
-#index {
+body {
   background: #FFFFF2; }
-  #index #actions {
+  body #actions {
     box-shadow: 2px 2px 5px #888888; }
-  #index .sidebar {
+  body .sidebar {
     position: fixed;
     width: 80px;
     height: 100%;
     bottom: 0;
     padding-top: 60px; }
-    #index .sidebar .date button, #index .sidebar .members button {
+    body .sidebar .date button, body .sidebar .members button {
       width: 80px;
       height: 80px; }
-    #index .sidebar .date button {
+    body .sidebar .date button {
       font-size: 36px;
       font-weight: bold;
       color: white;
@@ -733,12 +733,12 @@ section.event_item.partial > header {
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
       border-radius: 5px; }
-      #index .sidebar .date button div {
+      body .sidebar .date button div {
         width: 65px;
         height: 65px;
         background-color: #999999;
         color: white; }
-    #index .sidebar .members {
+    body .sidebar .members {
       top: 150px;
       right: 0px;
       bottom: 0px;
@@ -747,7 +747,7 @@ section.event_item.partial > header {
       position: absolute;
       overflow: auto;
       direction: rtl; }
-      #index .sidebar .members button {
+      body .sidebar .members button {
         background-color: white;
         font-size: 10px;
         margin-bottom: 10px;
@@ -758,16 +758,16 @@ section.event_item.partial > header {
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
         border-radius: 5px; }
-      #index .sidebar .members img {
+      body .sidebar .members img {
         width: 100%;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
         border-radius: 5px; }
-  #index .content {
+  body .content {
     margin-left: 100px; }
-    #index .content .day_picker {
+    body .content .day_picker {
       min-height: 30px;
       padding: 5px;
       -webkit-border-radius: 5px;
@@ -777,7 +777,7 @@ section.event_item.partial > header {
       border-radius: 5px;
       box-shadow: 2px 2px 5px #888888;
       background-color: beige; }
-    #index .content .events .past_events, #index .content .events .next_day, #index .content .events .current_day, #index .content .events .future {
+    body .content .events .past_events, body .content .events .next_day, body .content .events .current_day, body .content .events .future {
       margin-top: 20px;
       background-color: beige;
       padding: 5px 0px 2px;
@@ -786,7 +786,7 @@ section.event_item.partial > header {
       -ms-border-radius: 10px;
       -o-border-radius: 10px;
       border-radius: 10px; }
-      #index .content .events .past_events > span, #index .content .events .next_day > span, #index .content .events .current_day > span, #index .content .events .future > span {
+      body .content .events .past_events > span, body .content .events .next_day > span, body .content .events .current_day > span, body .content .events .future > span {
         font-weight: bold;
         color: #555555;
         margin: 0px 20px; }

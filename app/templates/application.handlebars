@@ -1,15 +1,19 @@
 <section class="navigation">
-  {{outlet nav}}
+	{{outlet nav}}
 </section>
 
-<section class="sidebar">
-    {{outlet sidebar}}
-</section>
+<div class="container-fluid">
+	<div class="row-fluid">
+		
+		
+		<aside class="sidebar hidden-phone span2"> <!-- .hidden-phone	-->
+			{{outlet sidebar}}
+		</aside>
 
-<section class="content">
-  {{outlet content}}
-</section>
-
-
-
-
+		<section class="content span10">
+			{{outlet content}}
+		</section>
+		
+		
+	</div>
+</div> <!-- /.container-fluid -->
