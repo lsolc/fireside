@@ -1,0 +1,30 @@
+#member_form {
+	margin-top: 50px;
+	
+	
+	
+	min-width: 320px;	
+	border: 1px solid $c_gray2;	
+	font-size: 16px;
+	color: $c_prm-1;
+	h3 {
+		background-color: $c_gray1;
+		height:15px;
+		padding: 5px 0px 5px 10px;
+		color: $c_prm-1;
+	}
+	#name {
+		width: 200px;
+		margin: 15px 20px 0px;
+		display: block;
+	}
+	.controls {				
+		width: 150px;	
+		margin: 15px 20px 20px;
+		.create_button {
+			margin-right: 10px;
+			width: 60px;
+			height:30px;
+		}		
+	}
+}

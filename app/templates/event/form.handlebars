@@ -1,0 +1,46 @@
+<section class="container">	
+	<form id="new_event" action="new_submit" method="get" accept-charset="utf-8">
+		<h3>New Event</h3>
+		
+		<section class="time">			
+			<section class="from">
+				<span>From:</span>
+				<select id="hours">{{{show_hours model.from_hours}}}</select>
+				<span>:</span>
+				<select id="minutes">{{{show_minutes model.from_minutes}}}</select>
+				<span id="date">{{model.from_date}}</span>
+			</section>
+			
+			<section class="duration">
+				<span>Duration:</span>
+				<div class="layout-slider">
+					<input id="SliderSingle" type="slider" name="duration_hours" value="{{model.duration_hours}}	" />
+				</div>   
+			</section>
+			
+			<section class="till">
+				<span>To:</span>
+				<span id="date_till"></span>
+			</section>		    		
+		</section>	
+		
+		<input type="text"   name="" value="{{model.title}}" id="title" placeholder="Title:">
+		<textarea name="Name" rows="8" cols="40" maxlength="250" id="description" placeholder="Description:">{{model.description}}</textarea>		
+
+		<section class="members">
+			<select id="members" data-placeholder="Choose a member..." multiple="multiple">
+				{{#each all_members}}
+				<option {{should_be_selected this ../model.members}} value="{{this.id}}">{{this.display_name}}</option>	
+				{{/each}}											
+			</select>
+		</section>	
+		
+		<ul id="errors"></ul>
+		
+		<section class="controls">
+			<input type="button" value="Create" class="create_button">			
+			<a href="#/">Cancel</a>
+		</section>	
+	
+	</form>
+</section>

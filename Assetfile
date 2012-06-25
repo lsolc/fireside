@@ -1,0 +1,130 @@
+APPNAME = 'app'
+
+require 'json'
+require 'rake-pipeline-web-filters'
+
+WebFilters = Rake::Pipeline::Web::Filters
+
+class LoaderFilter < WebFilters::MinispadeFilter
+  def generate_output(inputs, output)
+    inputs.each do |input|
+      code = input.read
+      module_id = @module_id_generator.call(input)
+      contents = "function(require) {\n#{code}\n}"
+      ret = "\nloader.register('#{module_id}', #{contents});\n"
+      output.write ret
+    end
+  end
+end
+
+class EmberAssertFilter < Filter
+  def generate_output(inputs, output)
+    inputs.each do |input|
+      result = input.read
+      result.gsub!(%r{^(\s)*Ember\.(assert|deprecate|warn)\((.*)\).*$}, '')
+      output.write(result)
+    end
+  end
+end
+
+class HandlebarsFilter < Rake::Pipeline::Filter
+  def initialize(&block)
+    block ||= proc { |input| input.sub(/\.handlebars$/, '.js') }
+    super(&block)
+  end
+
+  def generate_output(inputs, output)
+    inputs.each do |input|
+      name = input.path.gsub(/templates\//, '').gsub(/\.handlebars/, '').gsub(/\//, '-')
+      output.write "Em.TEMPLATES['#{name}'] = Ember.Handlebars.compile(#{input.read.to_json});\n\n"
+    end
+  end
+end
+
+output 'assets'
+
+input 'app' do
+  match 'lib/**/*.js' do
+    filter LoaderFilter,
+      :module_id_generator => proc { |input|
+      input.path.sub(/^lib\//, "#{APPNAME}/").sub(/\.js$/, '')
+    }
+
+    if ENV['RAKEP_MODE'] == 'production'
+      filter EmberAssertFilter
+      uglify {|input| input}
+    end
+    concat 'app.js'
+  end
+
+  match 'vendor/**/*.js' do
+    filter LoaderFilter,
+      :module_id_generator => proc { |input|
+      input.path.sub(/^vendor\//, '').sub(/\.js$/, '')
+    }
+
+    if ENV['RAKEP_MODE'] == 'production'
+      filter EmberAssertFilter
+      uglify {|input| input}
+    end
+    concat %w[
+      vendor/jquery.js
+      vendor/ember.js
+      vendor/ember-data.js
+    ], 'vendor.js'
+  end
+
+  match 'modules/**/*.js' do
+    if ENV['RAKEP_MODE'] == 'production'
+      filter EmberAssertFilter
+      uglify {|input| input}
+    end
+    concat 'app.js'
+  end
+
+  match 'plugins/**/*.js' do
+    if ENV['RAKEP_MODE'] == 'production'
+      uglify {|input| input}
+    end
+    concat do |input|
+      input.sub(/plugins\//, '')
+    end
+  end
+
+  match 'templates/**/*.handlebars' do
+    filter HandlebarsFilter
+    if ENV['RAKEP_MODE'] == 'production'
+      uglify {|input| input}
+    end
+    concat 'templates.js'
+    filter LoaderFilter, :module_id_generator => proc { |input| 'app/templates' }
+  end
+
+  match 'tests/**/*.js' do
+    filter LoaderFilter,
+      :module_id_generator => proc { |input|
+      input.path.sub(/^lib\//, "#{APPNAME}/").sub(/\.js$/, '')
+    }
+    concat 'app-tests.js'
+  end
+
+
+  match 'css/*.css' do
+    if ENV['RAKEP_MODE'] == 'production'
+      yui_css
+    end
+    concat do |input|
+      input.sub(/css\//, '')
+    end 
+  end
+
+
+  match "static/**/*" do
+    concat do |input|
+      input.sub(/static\//, '')
+    end
+  end
+end
+
+# vim: filetype=ruby
+

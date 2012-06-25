@@ -1,0 +1,107 @@
+// temp.
+.past_events { .event_item .title, .event_item .details_panel {color: tomato;}}
+.past_events { .event_item {border: 2px solid tomato; }}
+.next_day, .future {.event_item {background-color: lightyellow;}}
+//
+
+.event_item {
+	$top_panel_height: 25px;		
+	$title_height: 36px;
+	
+	margin: 10px 10px 10px;
+	padding: 3px 10px 10px;
+	background-color: white;	
+	border-bottom: solid 1px $c_gray2;
+	box-shadow: 1px 1px 5px #888888;
+	@include border-radius(5px);	
+	header {		
+		.top_panel{
+			height: $top_panel_height;
+			position: relative;
+			border-bottom: 1px solid $c_gray2;
+			.time_panel {
+				color: $c_prm-1;
+				font-weight: bold;
+				font-size: 10pt;
+			}
+			.action_panel {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				img {
+					padding: 2px 8px ;
+					border-left: 1px solid $c_gray2;
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+		.title {
+			@include ellipsis();
+			@include font_cursive;
+			
+			color: $c_gray5;
+			top: $top_panel_height;
+			height: 36px;
+			width: 100%;
+			font-size: 15pt;
+			font-weight: bold;
+			margin-top: 15px;
+		}
+	}
+	.details_panel {
+		text-align: justify;		
+		color: $c_gray5;
+		img {
+			width: 32px;
+			height: 32px;
+			float: left;
+			margin-right: 5px;
+		} 
+	}	
+}
+
+section.event_item.full {
+}
+
+section.event_item.partial {
+	> header {		
+		$time_panel_width: 110px;
+		$photos_width: 96px;
+		$action_panel_width: 60px;
+		$top_panel_height: 40px;
+		$actions_height: 32px;
+		$header_height: $top_panel_height + $actions_height;
+		height: $header_height; 
+		.top_panel {
+			height: $top_panel_height;
+			.time_panel, .title {
+				display: block;
+				position: absolute;
+				height: $top_panel_height;
+				line-height: $top_panel_height;				
+			}
+			.time_panel {
+				width: $time_panel_width;
+			}	
+			.title {
+				//	width: $event_width - $time_panel_width;
+				right: 0;
+				font-size: 12pt;					
+			}					
+		}	
+		.action_panel {
+			top: $top_panel_height;
+			height: $actions_height;
+			> .details_panel {
+				//width: $event_width - $photos_width - $actions_width;
+				@include ellipsis;
+				font-size: 9pt;
+				color: $c_gray3;
+			}				
+		}		
+	}	
+}
+
+
+

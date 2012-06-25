@@ -1,0 +1,16 @@
+.photos div.wrapper {
+	position: relative;
+	a {
+		img.edit {
+			background-color: green;
+			position: absolute;
+			bottom: 0px;
+			right: 10px;
+			width: 16px;
+			height: 16px;
+			z-index: 1;
+		}
+	}
+}
+
+

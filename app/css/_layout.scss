@@ -1,0 +1,96 @@
+#index {	
+	$width_member_button: 80px;
+	background: #FFFFF2;	
+	#actions {
+		box-shadow: 2px 2px 5px #888888;
+		//background-color: brown;
+	}	
+	.sidebar {	
+		//border: 1px dotted red;
+		position: fixed;
+		width: 80px;
+		height: 100%;
+		bottom: 0;
+		padding-top: 60px;
+		
+		.date button, .members button {
+			width: 80px;
+			height: 80px;
+		}
+		.date {
+			//border: 1px dotted green;
+			button {
+				font-size: 36px;
+				font-weight: bold;
+				color: white;
+				background-color: white;
+				box-shadow: 2px 2px 5px #888888;
+				@include border-radius(5px);
+				div {
+					width: 65px;
+					height: 65px;
+					background-color: $c_gray3;
+					color: white;
+				}
+			}
+		}
+		.members {
+			//border: 1px dotted blue;
+			top: 150px;
+			right: 0px;
+			bottom: 0px;
+			width: 100px;
+			height:auto;
+			position: absolute;
+			overflow: auto;	
+			direction: rtl;
+			button {
+				background-color: white;
+				font-size: 10px;
+				margin-bottom: 10px;
+				padding: 5px;
+				box-shadow: 2px 2px 5px #888888;
+				@include border-radius(5px);
+			}
+			img {	
+				width: 100%;			
+				@include border-radius(5px);
+			}
+		}
+	}
+	.content {
+		margin-left: 100px;
+		.day_picker {
+			min-height: 30px;
+			padding: 5px;
+			@include border-radius(5px);
+			box-shadow: 2px 2px 5px #888888;
+			background-color: beige;
+			
+		}
+		.events {
+			.past_events, .next_day, .current_day, .future {
+				margin-top: 20px;		
+				background-color: beige;
+				padding: 5px 0px 2px;
+				@include border-radius(10px);
+				> span {
+					font-weight: bold;
+					color: $c_gray5;
+					margin: 0px 20px;
+				}
+			}
+			.past_events {
+				> span {
+					//color: tomato;
+				}
+			}
+			.next_day {		
+			}				
+			.current_day {
+			}
+			.future {
+			}
+		}
+	}
+}

@@ -1,0 +1,80 @@
+.container {
+	min-width: 550px;
+	border: 1px solid;
+	form {
+		border: 1px solid $c_gray2;	
+		font-size: 16px;
+		color: $c_prm-1;
+		h3 {
+			background-color: $c_gray1;
+			height:15px;
+			padding: 5px 0px 5px 10px;
+			color: $c_prm-1;
+		}			
+		#title, #description, .controls, .members {						
+			margin-top: 16px;
+			margin-left: 70px;
+		}	
+		#date {
+			margin-left: 10px;
+		}	
+		.time {				
+			height: 120px;	
+			.from, .till{		
+				margin-left: 10px;
+					
+				#hours {
+					margin-left: 40px;
+				}
+				#hours, #minutes {				
+					font-size: 16px;
+					margin-top: 16px;	
+				}
+			}				
+			.duration {
+				margin-left: 10px;
+				margin-top: 30px;
+				.layout-slider{
+					bottom: 20px;
+					left: 85px;
+					position: relative;
+				}
+			}
+			.till {
+				margin-top: 10px;
+				#date_till {
+					margin-left: 35px;
+				}
+			}
+		}	
+		#title, #description {
+			border: 1px solid $c_gray2;
+			width: 410px;	
+		}
+		#title {				
+			height: 20px;			
+		}
+		#description {						
+			height: 60px;
+				
+		}
+		#members {
+			width: 412px;
+		}
+		#errors {
+			margin-left: 70px;
+		}
+		.controls {				
+			width: 150px;	
+			margin-bottom: 20px;			
+			.create_button {
+				margin-right: 10px;
+				width: 60px;
+				height: 30px;
+			}
+			a {				
+			}		
+		}
+	}			
+}
+	

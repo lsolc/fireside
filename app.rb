@@ -3,6 +3,10 @@ require 'sinatra'
 require 'json'
 require 'date'
 
+mime_type :tmpl, "text/plain"
+mime_type :hbs, "text/x-handlebars-template"
+mime_type :handlebars, "text/x-handlebars-template"
+
 def items
   result = []
   2.times do |i|
@@ -18,15 +22,19 @@ def items
       :description => "Na zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit\nNa zpatecni ceste dojit na postu a nakoupit",
     }
   end
-  result
+  { cal_events: result }
 end
 
-get '/events/:id' do
+get '/' do
+  File.read(File.join('public', 'index.html'))
+end
+
+get '/cal_events/:id' do
   content_type 'application/json', :charset => 'utf-8'
   items[params[:id].to_i].to_json
 end
 
-get '/events' do
+get '/cal_events' do
   content_type 'application/json', :charset => 'utf-8'
   items.to_json
 end
@@ -37,17 +45,28 @@ get '/members' do
     {
       :id => 0,
       :display_name => 'Pepa',
-      :image_url => 'pepa.png'
+      :image_url => '/images/pepa.png'
     },
     {
       :id => 1,
       :display_name => 'Lida',
-      :image_url => 'lida.png'
+      :image_url => '/images/lida.png'
     },
     {
       :id => 2,
-      :display_name => 'Lada',
-      :image_url => 'lada.png'
+      :display_name => 'Anezka',
+      :image_url => '/images/anezka.png'
+    },
+    {
+      :id => 3,
+      :display_name => 'Hynek',
+      :image_url => '/images/hynek.png'
+    },
+    
+    {
+      :id => 4,
+      :display_name => 'Vitek',
+      :image_url => '/images/vitek.png'
     }
     ].to_json
 end  

@@ -1,9 +1,0 @@
-// just test of media queries...
-#index {
-	.main {@include box-orient(vertical);}
-	.events {@include box-orient(vertical);}
-	.members {@include box-ordinal-group(1);}
-	.content {@include box-ordinal-group(0);}
-	.day_picker {@include box-ordinal-group(2);}
-}
-
