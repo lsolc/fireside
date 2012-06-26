@@ -31,6 +31,7 @@ GEM
       multi_json (~> 1.0)
     ffi (1.0.11)
     fssm (0.2.9)
+    growl (1.0.3)
     guard (1.2.1)
       listen (>= 0.4.2)
       thor (>= 0.14.6)
@@ -65,6 +66,7 @@ PLATFORMS
 DEPENDENCIES
   colored
   compass
+  growl
   guard
   guard-rake
   rack

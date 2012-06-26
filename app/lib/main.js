@@ -24,7 +24,7 @@ App.store = DS.Store.create({
 	adapter: DS.RESTAdapter.create({ bulkCommit: false })
 });
 
-
+ 
 
 App.ApplicationController = Em.ArrayController.extend();
 App.MainController = Em.ArrayController.extend();
@@ -33,11 +33,8 @@ App.ApplicationView = Em.View.extend({
 	templateName: 'application'
 });
 
-App.MembersView = Em.CollectionView.extend({
-	content: [ { image_url: 'pepa.png' }, { image_url: 'lida.png' }],
-	itemViewClass: Em.View.extend({
-		templateName: 'member-listItem' 
-	})
+App.MembersView = Em.View.extend({
+	templateName: 'member-list'
 });
 
 App.EventsView =  Em.View.extend({
@@ -66,10 +63,10 @@ App.Event = DS.Model.extend({
 });
 
 App.MembersController = Em.ArrayController.extend({
+  content: [ { image_url: 'pepa.png' }, { image_url: 'lida.png' }]
 });
 
 App.initialize(router);
-
 
 
 

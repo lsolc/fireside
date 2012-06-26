@@ -4,6 +4,7 @@ gem 'colored'
 
 gem 'guard'
 gem 'guard-rake'
+gem 'growl'
 
 gem 'rack'
 gem 'rack-rewrite'

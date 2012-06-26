@@ -10,7 +10,7 @@ Em.TEMPLATES['events'] = Ember.Handlebars.compile("<section class=\"day_picker h
 
 Em.TEMPLATES['member-form'] = Ember.Handlebars.compile("\n\t<form id=\"member_form\" action=\"\" method=\"\" accept-charset=\"utf-8\">\n\t\t<h3>Add Member</h3>\n\t\t<input type=\"text\"   name=\"household\" value=\"\" id=\"household\" placeholder=\"Household:\">\n\t\t<input type=\"text\"   name=\"name\" value=\"{{model.display_name}}\" id=\"name\" placeholder=\"Name:\">\n\t\t\n\t\t<ul id=\"errors\"></ul>\n\t\t<section class=\"controls\">\n\t\t\t<input type=\"button\" value=\"Create\" class=\"create_button\">\t\t\t\n\t\t\t<a href=\"#/\">Cancel</a>\n\t\t</section>\t\n\t</form>\n");
 
-Em.TEMPLATES['member-listItem'] = Ember.Handlebars.compile("<div class=\"wrapper\">\n    <button type=\"button\"><img {{bindAttr src=\"image_url\"}} /></button>\n</div>\n");
+Em.TEMPLATES['member-list'] = Ember.Handlebars.compile("{{#each content}}\n<div class=\"wrapper\">\n  <button type=\"button\"><img src=\"img/{{unbound image_url}}\"  /></button>\n</div>  \n{{/each}}\n");
 
 
 });
