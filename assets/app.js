@@ -37,7 +37,7 @@ var router =  Em.Router.create({
 				});
 				router.get('applicationController').connectOutlet({
 					outletName: 'content',
-					name: 'events'
+					name: 'calendar'
 				});
 			}
 		})
@@ -61,24 +61,26 @@ App.MembersView = Em.View.extend({
 	templateName: 'member-list'
 });
 
+App.CalendarView =  Em.View.extend({
+	templateName: 'calendar'
+});
+App.CalendarController = Em.ArrayController.extend({
+
+});
+
+
 App.EventsView =  Em.View.extend({
-	templateName: 'events',
-	content: {}
-});
-
-App.EventView = Em.CollectionView.extend({
-	content: [ { subject: 'Event 1' }, { subject: 'Event 2' }],
-	itemViewClass: Em.View.extend({
-		templateName: 'event-listItem'
-	})
+	templateName: 'event-list'
 });
 
 
-App.EventsController = Em.ArrayController.extend({
 
+
+App.Member = DS.Model.extend({
+	image_url: DS.attr('string')
 });
 
-
+App.members = App.store.findAll(App.Member);
 
 
 App.Event = DS.Model.extend({
@@ -86,9 +88,18 @@ App.Event = DS.Model.extend({
 	description: DS.attr('string')
 });
 
+App.events = App.store.findAll(App.Event);
+
 App.MembersController = Em.ArrayController.extend({
-  content: [ { image_url: 'pepa.png' }, { image_url: 'lida.png' }]
+  contentBinding: 'App.members'
 });
+
+App.EventsController = Em.ArrayController.extend({
+  contentBinding: 'App.events'
+});
+App.eventsController = App.EventsController.create();
+
+
 
 App.initialize(router);
 

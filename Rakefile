@@ -32,7 +32,9 @@ namespace :sass do
   end
 end
 
-
+task :run do
+  `bundle exec rackup -p 3000`
+end
 
 namespace :em do
   task :update do
