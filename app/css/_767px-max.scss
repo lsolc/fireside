@@ -3,7 +3,7 @@
 
 @media (max-width: 480px) {
 	
-	#index {
+	body {
 		padding: 0px;
 		#actions {
 			margin: 0px;
@@ -19,12 +19,9 @@
 
 @media (max-width: 767px) {
 	
-	#index div.container-fluid div.row-fluid .content {
+	.container-fluid .row-fluid .content {
 		margin-left: 0px;
 		//margin-left: -10px;
 		//margin-right: -10px;
-	}
-	#index .members {	
-		//position: fixed;	
 	}
 }

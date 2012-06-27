@@ -2,20 +2,20 @@
 // ----------------------------------
 
 @media (min-width: 768px) and (max-width: 979px) {
-	#index .sidebar .date button {
+	body .sidebar .date button {
 		margin-top: 20px;
 	
 	}
-	#index .members {
+	body .members {
 	    //position: absolute;
 		margin-top: 70px;	    
 	}	
 	
-	#index #actions {
+	body #actions {
 		position: fixed;
 	}
 	
-	#index .content {
+	body .content {
 	    margin-top: 70px;
 	}
 }

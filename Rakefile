@@ -20,6 +20,7 @@ task :build do
   build
 end
 
+
 namespace :sass do
   desc "Compiles app/css/app.scss -> app/css/app.css "
   task :app do
@@ -46,6 +47,7 @@ namespace :em do
     puts 'Building ember-data'
     puts `cd ../ember-data/ && git pull && rake && cp dist/ember-data.js ../fireside/app/vendor`
   end
+
 end
 
 

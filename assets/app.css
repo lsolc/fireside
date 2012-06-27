@@ -711,85 +711,86 @@ section.event_item.partial > header {
 
 body {
   background: #FFFFF2; }
-  body #actions {
-    box-shadow: 2px 2px 5px #888888; }
-  body .sidebar {
-    position: fixed;
+
+#main #actions {
+  box-shadow: 2px 2px 5px #888888; }
+#main .sidebar {
+  position: fixed;
+  width: 80px;
+  height: 100%;
+  bottom: 0;
+  padding-top: 60px; }
+  #main .sidebar .date button, #main .sidebar .members button {
     width: 80px;
-    height: 100%;
-    bottom: 0;
-    padding-top: 60px; }
-    body .sidebar .date button, body .sidebar .members button {
-      width: 80px;
-      height: 80px; }
-    body .sidebar .date button {
-      font-size: 36px;
-      font-weight: bold;
-      color: white;
+    height: 80px; }
+  #main .sidebar .date button {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background-color: white;
+    box-shadow: 2px 2px 5px #888888;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px; }
+    #main .sidebar .date button div {
+      width: 65px;
+      height: 65px;
+      background-color: #999999;
+      color: white; }
+  #main .sidebar .members {
+    top: 150px;
+    right: 0px;
+    bottom: 0px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    overflow: auto;
+    direction: rtl; }
+    #main .sidebar .members button {
       background-color: white;
+      font-size: 10px;
+      margin-bottom: 10px;
+      padding: 5px;
       box-shadow: 2px 2px 5px #888888;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
       border-radius: 5px; }
-      body .sidebar .date button div {
-        width: 65px;
-        height: 65px;
-        background-color: #999999;
-        color: white; }
-    body .sidebar .members {
-      top: 150px;
-      right: 0px;
-      bottom: 0px;
-      width: 100px;
-      height: auto;
-      position: absolute;
-      overflow: auto;
-      direction: rtl; }
-      body .sidebar .members button {
-        background-color: white;
-        font-size: 10px;
-        margin-bottom: 10px;
-        padding: 5px;
-        box-shadow: 2px 2px 5px #888888;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        border-radius: 5px; }
-      body .sidebar .members img {
-        width: 100%;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        border-radius: 5px; }
-  body .content {
-    margin-left: 100px; }
-    body .content .day_picker {
-      min-height: 30px;
-      padding: 5px;
+    #main .sidebar .members img {
+      width: 100%;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
-      border-radius: 5px;
-      box-shadow: 2px 2px 5px #888888;
-      background-color: beige; }
-    body .content .events .past_events, body .content .events .next_day, body .content .events .current_day, body .content .events .future {
-      margin-top: 20px;
-      background-color: beige;
-      padding: 5px 0px 2px;
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      -ms-border-radius: 10px;
-      -o-border-radius: 10px;
-      border-radius: 10px; }
-      body .content .events .past_events > span, body .content .events .next_day > span, body .content .events .current_day > span, body .content .events .future > span {
-        font-weight: bold;
-        color: #555555;
-        margin: 0px 20px; }
+      border-radius: 5px; }
+#main .content {
+  margin-left: 100px; }
+  #main .content .day_picker {
+    min-height: 30px;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #888888;
+    background-color: beige; }
+  #main .content .events .past_events, #main .content .events .next_day, #main .content .events .current_day, #main .content .events .future {
+    margin-top: 20px;
+    background-color: beige;
+    padding: 5px 0px 2px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px; }
+    #main .content .events .past_events > span, #main .content .events .next_day > span, #main .content .events .current_day > span, #main .content .events .future > span {
+      font-weight: bold;
+      color: #555555;
+      margin: 0px 20px; }
 
 .photos div.wrapper {
   position: relative; }
@@ -826,25 +827,25 @@ body {
       height: 30px; }
 
 @media (max-width: 480px) {
-  #index {
+  body {
     padding: 0px; }
-    #index #actions {
+    body #actions {
       margin: 0px;
       padding: 0px; }
-    #index .event_item {
+    body .event_item {
       margin: 4px; } }
 @media (max-width: 767px) {
-  #index div.container-fluid div.row-fluid .content {
+  .container-fluid .row-fluid .content {
     margin-left: 0px; } }
 @media (min-width: 768px) and (max-width: 979px) {
-  #index .sidebar .date button {
+  body .sidebar .date button {
     margin-top: 20px; }
 
-  #index .members {
+  body .members {
     margin-top: 70px; }
 
-  #index #actions {
+  body #actions {
     position: fixed; }
 
-  #index .content {
+  body .content {
     margin-top: 70px; } }

@@ -1,5 +1,6 @@
 .DS_Store
 public/.sass-cache/*
 vendor/ruby
-.sass-cache/
-tmp/
+.sass-cache/*
+tmp/*
+assets/*
