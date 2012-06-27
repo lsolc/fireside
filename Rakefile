@@ -15,17 +15,18 @@ def build
 end
 
 
-desc "Build #{app_name}"
+desc "Build 'app' and deploy files into 'assets' folder"
 task :build do
   build
 end
 
 namespace :sass do
+  desc "Compiles app/css/app.scss -> app/css/app.css "
   task :app do
     `sass app/css/app.scss app/css/app.css --compass`
     build
   end
-
+   desc "Compiles app/css/bootstrap.scss -> app/css/bootstrap.css "
   task :bootstrap do
     `sass app/css/bootstrap.scss app/css/bootstrap.css`
     build

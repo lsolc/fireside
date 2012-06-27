@@ -80,8 +80,6 @@ App.Member = DS.Model.extend({
 	image_url: DS.attr('string')
 });
 
-App.members = App.store.findAll(App.Member);
-
 
 App.Event = DS.Model.extend({
 	title: DS.attr('string'),
@@ -89,6 +87,7 @@ App.Event = DS.Model.extend({
 });
 
 App.events = App.store.findAll(App.Event);
+App.members = App.store.findAll(App.Member);
 
 App.MembersController = Em.ArrayController.extend({
   contentBinding: 'App.members'
