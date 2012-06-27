@@ -4,9 +4,11 @@ gem 'colored'
 
 gem 'guard'
 gem 'guard-rake'
+gem 'growl'
 
 gem 'rack'
 gem 'rack-rewrite'
+gem 'rack-contrib'
 # gem 'rack-streaming-proxy'
 
 gem 'sass'
@@ -18,3 +20,4 @@ gem 'yui-compressor'
 gem 'rake-pipeline', :git => 'https://github.com/livingsocial/rake-pipeline.git'
 gem 'rake-pipeline-web-filters', :git => 'https://github.com/wycats/rake-pipeline-web-filters.git'
 
+gem 'sinatra'

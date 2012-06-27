@@ -1,7 +1,6 @@
 <section class="day_picker hidden-phone"> <!-- .hidden-phone -->
 	day_picker
 </section>
-
 <section class="events row-fluid">
 								
 	<section class="events_now span7">						
@@ -9,7 +8,7 @@
 		</section>				
 		<section class="past_events">
 			<span>Older Events</span>
-			  {{view App.EventView}}						
+			  {{view App.EventsView}}						
 		</section>
 						
 		<section class="current_day">
@@ -17,7 +16,7 @@
 			<!--<a href="#/events/new">New Event</a>-->
 			<a href="#/events/new" {{action "newEvent"}}>New Event</a>
 			<section class="current">
-				  {{view App.EventView}}
+				  {{view App.EventsView}}
 			</section>
 		</section>
 	</section>
@@ -27,13 +26,13 @@
 			<span>Tomorrow</span>
 			<a href="#/events/new">New Event</a>							
 			<section class="next">
-				  {{view App.EventView}}
+				  {{view App.EventsView}}
 			</section>
 		</section>
 						
 		<section class="future">
 			<span>Future</span>
-			  {{view App.EventView}}
+			  {{view App.EventsView}}
 		</section>			
 	</section>				
 		

@@ -41,7 +41,7 @@ var router =  Em.Router.create({
 				});
 				router.get('applicationController').connectOutlet({
 					outletName: 'content',
-					name: 'events'
+					name: 'calendar'
 				});
 			}
 		})
@@ -52,7 +52,7 @@ App.store = DS.Store.create({
 	adapter: DS.RESTAdapter.create({ bulkCommit: false })
 });
 
-
+ 
 
 App.ApplicationController = Em.ArrayController.extend();
 App.MainController = Em.ArrayController.extend(); // ???
@@ -65,31 +65,36 @@ App.ApplicationView = Em.View.extend({
 	templateName: 'application'
 });
 
-App.MembersView = Em.CollectionView.extend({
-	content: [ { image_url: 'pepa.png' }, { image_url: 'lida.png' }],
-	itemViewClass: Em.View.extend({
-		templateName: 'member-listItem' 
-	})
+App.MembersView = Em.View.extend({
+	templateName: 'member-list'
 });
 
-App.EventsView =  Em.View.extend({
-	templateName: 'events',
-	content: {}
+App.CalendarView =  Em.View.extend({
+	templateName: 'calendar'
+});
+App.CalendarController = Em.ArrayController.extend({
+
 });
 
-App.EventView = Em.CollectionView.extend({
-	content: [ { subject: 'Event 1' }, { subject: 'Event 2' }],
-	itemViewClass: Em.View.extend({
-		templateName: 'event-listItem'
-	})
-});
-
+<<<<<<< HEAD
 App.NavigationController = Em.ArrayController.extend({});
 App.EventsController = Em.ArrayController.extend({
 
+=======
+
+App.EventsView =  Em.View.extend({
+	templateName: 'event-list'
+>>>>>>> b83d7c1223a9dfa872d970cdbcd08c550dedb235
 });
 
 
+
+
+App.Member = DS.Model.extend({
+	image_url: DS.attr('string')
+});
+
+App.members = App.store.findAll(App.Member);
 
 
 App.Event = DS.Model.extend({
@@ -97,11 +102,20 @@ App.Event = DS.Model.extend({
 	description: DS.attr('string')
 });
 
+App.events = App.store.findAll(App.Event);
+
 App.MembersController = Em.ArrayController.extend({
+  contentBinding: 'App.members'
 });
 
-App.initialize(router);
+App.EventsController = Em.ArrayController.extend({
+  contentBinding: 'App.events'
+});
+App.eventsController = App.EventsController.create();
 
+
+
+App.initialize(router);
 
 
 
