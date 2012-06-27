@@ -13,6 +13,7 @@ end
 task :sass do
   `sass app/css/app.scss app/css/app.css --compass`
   `sass app/css/bootstrap.scss app/css/bootstrap.css`
+  Rake::Pipeline::Project.new('Assetfile').invoke
 end
 
 desc "Run tests with PhantomJS"

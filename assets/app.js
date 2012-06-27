@@ -32,6 +32,10 @@ var router =  Em.Router.create({
 			route: '/',
 			connectOutlets: function(router) {
 				router.get('applicationController').connectOutlet({
+					outletName: 'nav',
+					name: 'navigation'
+				});
+				router.get('applicationController').connectOutlet({
 					outletName: 'sidebar',
 					name: 'members'
 				});
@@ -51,7 +55,11 @@ App.store = DS.Store.create({
 
 
 App.ApplicationController = Em.ArrayController.extend();
-App.MainController = Em.ArrayController.extend();
+App.MainController = Em.ArrayController.extend(); // ???
+
+App.NavigationView = Em.View.extend({
+	templateName: 'navigation'
+});
 
 App.ApplicationView = Em.View.extend({
 	templateName: 'application'
@@ -76,7 +84,7 @@ App.EventView = Em.CollectionView.extend({
 	})
 });
 
-
+App.NavigationController = Em.ArrayController.extend({});
 App.EventsController = Em.ArrayController.extend({
 
 });
