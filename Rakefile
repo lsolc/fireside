@@ -15,7 +15,7 @@ def build
 end
 
 
-desc "Build 'app' and deploy files into 'assets' folder"
+desc "Run rake-pipeline Assetfile. Build 'app' and deploy files into 'assets' folder"
 task :build do
   build
 end
@@ -33,16 +33,18 @@ namespace :sass do
   end
 end
 
+desc "Run development web server"
 task :run do
   `bundle exec rackup -p 3000`
 end
 
 namespace :em do
+
   task :update do
     puts 'Building ember.js ...'
-    puts `cd ../ember.js/ && git pull && rake && cp dist/ember.js ../fireside/public/scripts/lib/base`
+    puts `cd ../ember.js/ && git pull && rake && cp dist/ember.js ../fireside/app/vendor`
     puts 'Building ember-data'
-    puts `cd ../ember-data/ && git pull && rake && cp dist/ember-data.js ../fireside/public/scripts/lib/base`
+    puts `cd ../ember-data/ && git pull && rake && cp dist/ember-data.js ../fireside/app/vendor`
   end
 end
 
