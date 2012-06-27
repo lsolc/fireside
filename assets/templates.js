@@ -10,13 +10,9 @@ Em.TEMPLATES['event-list'] = Ember.Handlebars.compile("{{#each App.eventsControl
 
 Em.TEMPLATES['member-form'] = Ember.Handlebars.compile("\n\t<form id=\"member_form\" action=\"\" method=\"\" accept-charset=\"utf-8\">\n\t\t<h3>Add Member</h3>\n\t\t<input type=\"text\"   name=\"household\" value=\"\" id=\"household\" placeholder=\"Household:\">\n\t\t<input type=\"text\"   name=\"name\" value=\"{{model.display_name}}\" id=\"name\" placeholder=\"Name:\">\n\t\t\n\t\t<ul id=\"errors\"></ul>\n\t\t<section class=\"controls\">\n\t\t\t<input type=\"button\" value=\"Create\" class=\"create_button\">\t\t\t\n\t\t\t<a href=\"#/\">Cancel</a>\n\t\t</section>\t\n\t</form>\n");
 
-<<<<<<< HEAD
-Em.TEMPLATES['member-listItem'] = Ember.Handlebars.compile("<div class=\"date\"><button><div><br />12</div></button></div>\n<div class=\"members\">\n\t<!--<div class=\"wrapper\">-->\n\t\t<button type=\"button\">\n\t\t\t<img {{bindAttr src=\"image_url\"}} />\n\t\t</button>\n\t<!--</div>-->\n</div>\t\n\n");
+Em.TEMPLATES['member-list'] = Ember.Handlebars.compile("{{#each content}}\n<div class=\"wrapper\">\n  <button type=\"button\"><img src=\"img/{{unbound image_url}}\"  /></button>\n</div>  \n{{/each}}\n");
 
 Em.TEMPLATES['navigation'] = Ember.Handlebars.compile("<section id=\"actions\" class=\"navbar navbar-fixed-top\">\n\t<!--<a href=\"#/members/new\" {{action \"newMember\" on=\"click\"}}>Add Member</a>-->\n\t<div class=\"navbar-inner\">\n\t\t<div class=\"container-fluid\">\n\t\t\t<a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t</a>\n\t\t\t<a class=\"brand\" href=\"#\">Project name</a>\n\t\t\t<div class=\"nav-collapse\">\n\t\t\t\t<ul class=\"nav\">\n\t\t\t\t\t<li class=\"active\"><a href=\"#\">Home</a></li>\n\t\t\t\t\t<li><a href=\"#about\">About</a></li>\n\t\t\t\t\t<li><a href=\"#contact\">Contact</a></li>\n\t\t\t\t</ul>\n\t\t\t</div><!--/.nav-collapse -->\n\t\t</div>\n\t</div>\n</section>\n");
-=======
-Em.TEMPLATES['member-list'] = Ember.Handlebars.compile("{{#each content}}\n<div class=\"wrapper\">\n  <button type=\"button\"><img src=\"img/{{unbound image_url}}\"  /></button>\n</div>  \n{{/each}}\n");
->>>>>>> b83d7c1223a9dfa872d970cdbcd08c550dedb235
 
 
 });

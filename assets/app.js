@@ -75,16 +75,12 @@ App.CalendarView =  Em.View.extend({
 App.CalendarController = Em.ArrayController.extend({
 
 });
-
-<<<<<<< HEAD
 App.NavigationController = Em.ArrayController.extend({});
-App.EventsController = Em.ArrayController.extend({
 
-=======
 
 App.EventsView =  Em.View.extend({
 	templateName: 'event-list'
->>>>>>> b83d7c1223a9dfa872d970cdbcd08c550dedb235
+
 });
 
 
@@ -94,8 +90,6 @@ App.Member = DS.Model.extend({
 	image_url: DS.attr('string')
 });
 
-App.members = App.store.findAll(App.Member);
-
 
 App.Event = DS.Model.extend({
 	title: DS.attr('string'),
@@ -103,6 +97,7 @@ App.Event = DS.Model.extend({
 });
 
 App.events = App.store.findAll(App.Event);
+App.members = App.store.findAll(App.Member);
 
 App.MembersController = Em.ArrayController.extend({
   contentBinding: 'App.members'
